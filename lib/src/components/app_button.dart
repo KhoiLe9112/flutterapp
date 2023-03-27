@@ -20,7 +20,7 @@ class ButtonCustom extends StatefulWidget {
 class _ButtonCustomState extends State<ButtonCustom> {
   @override
   Widget build(BuildContext context) {
-    print(widget.loading);
+    // print(widget.loading);
     return ElevatedButton(
       onPressed: widget.onPressed,
       style: ElevatedButton.styleFrom(
