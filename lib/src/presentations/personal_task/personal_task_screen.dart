@@ -189,6 +189,7 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
               decoration: const BoxDecoration(boxShadow: [
+                // Shadow for dropbox
                 BoxShadow(
                   blurRadius: 25.0,
                   color: AppColors.shadowColor,
