@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qlvbdh/src/theme/app_colors.dart';
 
 import '../../components/dropdown/dropdown.dart';
 
@@ -23,8 +24,9 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
   double height = 0, width = 0, xPosition = 0, yPosition = 0;
   bool isDropdownOpened = false;
   OverlayEntry? floatingDropdown;
+  String dropdownValue = "Việc của tôi";
 
-    @override
+  @override
   void initState() {
     actionKey = LabeledGlobalKey("widget.country");
     super.initState();
@@ -73,27 +75,22 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
                 Container(
                   color: Colors.lightBlue.shade100,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 30, right: 25),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Row(
                       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Padding(
-                            padding: EdgeInsets.only(top: 20, bottom: 20),
+                        Padding(
+                            padding: const EdgeInsets.only(top: 20, bottom: 20),
                             child: Text(
-                              'Việc của tôi',
-                              style: TextStyle(
+                              dropdownValue,
+                              style: const TextStyle(
                                   fontSize: 23,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.black),
                             )),
-                        // IconButton(
-                        //   icon: Image.asset('assets/arrow_down_icon.png', fit: BoxFit.fill,),
-                        //   onPressed: () {},
-                        // ),
                         GestureDetector(
-                          key: actionKey,
+                            key: actionKey,
                             onTap: () {
-                            
                               setState(() {
                                 if (isDropdownOpened) {
                                   floatingDropdown?.remove();
@@ -111,6 +108,7 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
                               color: Color(0xFF007FEB),
                               size: 40,
                             )),
+                        const Spacer(),
                         Padding(
                             padding: const EdgeInsets.only(
                                 left: 25, top: 20, bottom: 20),
@@ -185,14 +183,33 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
           )),
           //position of Overlay
           Positioned(
-            width: MediaQuery.of(context).size.width,
-            top: yPosition + height,
+            width: 200.0,
+            left: xPosition + 5.0,
+            top: yPosition + height - 15.0,
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
+              decoration: const BoxDecoration(boxShadow: [
+                BoxShadow(
+                  blurRadius: 25.0,
+                  color: AppColors.shadowColor,
+                  spreadRadius: 1,
+                  offset: Offset(
+                    10,
+                    10,
+                  ),
+                )
+              ]),
               child: DropDown(
                 itemHeight: height,
-                selectedItem: "",
-                callBack: (value) => {},
+                selectedItem: dropdownValue,
+                callBack: (value) {
+                  setState(() {
+                    dropdownValue = value;
+
+                    isDropdownOpened = !isDropdownOpened;
+                  });
+                  floatingDropdown?.remove();
+                },
               ),
             ),
           ),
@@ -220,14 +237,14 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Spacer(),
+        children: const <Widget>[
+          Spacer(),
           Text(
-            "widget.country",
-            style: const TextStyle(color: Colors.black, fontSize: 14),
+            "key",
+            style: TextStyle(color: Colors.black, fontSize: 14),
           ),
-          const Spacer(),
-          const Icon(Icons.arrow_drop_down),
+          Spacer(),
+          Icon(Icons.arrow_drop_down),
         ],
       ),
     );

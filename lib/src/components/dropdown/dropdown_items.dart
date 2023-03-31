@@ -25,20 +25,13 @@ class DropDownItem extends StatelessWidget {
         callBack(text);
       },
       child: Container(
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(8)),
-          // gradient: isSelected
-          //     ? AppColors.bgGradient
-          //     : const LinearGradient(colors: [Colors.white, Colors.white]),
-        ),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        color: isSelected ? AppColors.greyColor : Colors.white,
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20.0),
         child: Align(
-          alignment: Alignment.center,
+          alignment: Alignment.centerLeft,
           child: Text(
             text,
-            style: TextStyle(
-                color: isSelected ? Colors.white : AppColors.textColor,
-                fontSize: 14),
+            style: const TextStyle(color: Colors.black, fontSize: 14),
           ),
         ),
       ),

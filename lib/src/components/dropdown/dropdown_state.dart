@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'dropbox.dart';
 import 'dropdown.dart';
 
 class DropdownCountryBox extends StatefulWidget {
