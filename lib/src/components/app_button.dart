@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:qlvbdh/src/presentations/search_result.dart';
 
-class SearchButton extends StatelessWidget {
-  const SearchButton({
+class AppButton extends StatelessWidget {
+  String text;
+  Color backColor;
+  Color textColor;
+  AppButton({
+    required this.text,
+    required this.backColor,
+    required this.textColor,
     super.key,
   });
 
@@ -11,21 +17,19 @@ class SearchButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         padding: const EdgeInsets.all(16),
-        backgroundColor: Colors.blue.shade900,
+        backgroundColor: backColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(50)
+          borderRadius: BorderRadius.circular(15)
         )
       ),
-      onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => const SearchResultScreen()));
-      },
-      child: const Center(
+      onPressed: () {},
+      child: Center(
         child: Text(
-          'Tìm kiếm',
+          text,
           style: TextStyle(
               fontWeight: FontWeight.bold,
-              color: Colors.white,
-              fontSize: 30),
+              color: textColor,
+              fontSize: 14),
         ),
       ),
     );

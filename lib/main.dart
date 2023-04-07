@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:qlvbdh/src/presentations/communication.dart';
 import 'package:qlvbdh/src/presentations/personal_task/personal_task_screen.dart';
 import 'package:qlvbdh/src/presentations/task.dart';
+import 'package:qlvbdh/src/presentations/task_forward.dart';
 
 
 void main() {
@@ -12,9 +14,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      builder: (context, child) {
+        return MediaQuery(
+            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            child: child!);
+      },
       debugShowCheckedModeBanner: false,
-      home: PersonalTaskScreen(),
+      home: TaskScreen(),
       // theme: ThemeData(primarySwatch: Colors.deepPurple),
     );
   }

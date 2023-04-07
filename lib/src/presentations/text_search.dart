@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:qlvbdh/src/components/textfield_custom1.dart';
 
-import '../components/search_button.dart';
+import '../components/app_button.dart';
+import '../core/theme/app_color.dart';
 
 class TextSearchScreen extends StatefulWidget {
   const TextSearchScreen({super.key});
@@ -64,10 +65,8 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
       body: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
             ///Nhap van ban
             _buildInputTextField(),
-
             ///Chon ngay
             Padding(
               padding: const EdgeInsets.fromLTRB(25, 0, 25, 5),
@@ -81,7 +80,6 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
                 ),
               ),
             ),
-
             Column(
               children: [
                 _buildDropDownMenu('Loại văn bản'),
@@ -92,7 +90,6 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
                 _buildDropDownMenu('Người thụ lý'),
               ],
             ),
-
             const SizedBox(
               height: 30,
             ),
@@ -250,9 +247,9 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
   }
 
   Padding _buildSearchButton(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 25.0),
-      child: SearchButton(),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+      child: AppButton(text: 'Tìm kiếm', backColor: AppColor.darkBlue, textColor: Colors.white),
     );
   }
 }
