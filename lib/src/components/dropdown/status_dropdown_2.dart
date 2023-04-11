@@ -3,6 +3,7 @@ import 'package:qlvbdh/src/components/dropdown/dropdown_items.dart';
 import 'package:qlvbdh/src/core/const/text_const.dart';
 import 'package:qlvbdh/src/core/theme/app_color.dart';
 
+// Làm tương tự class status_dropdown (chuyển thành stateful để setState cho selectedItem)
 class StatusDropDown2 extends StatelessWidget {
   final double itemHeight;
   final String selectedItem;

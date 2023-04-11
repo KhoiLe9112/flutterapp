@@ -273,7 +273,6 @@ class _TaskScreenState extends State<TaskScreen> {
                               checkIcon: true,
                               itemHeight: height,
                               selectedItem: dropdownValue2,
-                              isSelected: true,
                               callBack: (value) {
                                 setState(() {
                                   dropdownValue2 = value;
