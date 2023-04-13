@@ -115,6 +115,7 @@ class _StatusDropdownState extends State<StatusDropDown> {
                     isSelected: selectedItem == widget.dropCountryData1[1],
                     callBack: (value) {
                       setState(() {
+                        widget.callBack.call(value);
                         selectedItem = widget.dropCountryData1[1];
                       });
                     },
@@ -125,6 +126,7 @@ class _StatusDropdownState extends State<StatusDropDown> {
                     isSelected: selectedItem == widget.dropCountryData1[2],
                     callBack: (value) {
                       setState(() {
+                        widget.callBack.call(value);
                         selectedItem = widget.dropCountryData1[2];
                       });
                     },
@@ -135,6 +137,7 @@ class _StatusDropdownState extends State<StatusDropDown> {
                     isSelected: selectedItem == widget.dropCountryData1[3],
                     callBack: (value) {
                       setState(() {
+                        widget.callBack.call(value);
                         selectedItem = widget.dropCountryData1[3];
                       });
                     },
@@ -145,6 +148,7 @@ class _StatusDropdownState extends State<StatusDropDown> {
                     isSelected: selectedItem == widget.dropCountryData1[4],
                     callBack: (value) {
                       setState(() {
+                        widget.callBack.call(value);
                         selectedItem = widget.dropCountryData1[4];
                       });
                     },
@@ -155,6 +159,7 @@ class _StatusDropdownState extends State<StatusDropDown> {
                     isSelected: selectedItem == widget.dropCountryData1[5],
                     callBack: (value) {
                       setState(() {
+                        widget.callBack.call(value);
                         selectedItem = widget.dropCountryData1[5];
                       });
                     },
@@ -165,6 +170,7 @@ class _StatusDropdownState extends State<StatusDropDown> {
                     isSelected: selectedItem == widget.dropCountryData1[6],
                     callBack: (value) {
                       setState(() {
+                        widget.callBack.call(value);
                         selectedItem = widget.dropCountryData1[6];
                       });
                     },

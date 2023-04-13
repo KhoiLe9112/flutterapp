@@ -59,7 +59,6 @@ class _TaskScreenState extends State<TaskScreen> {
             children: [
               ///Toolbar
               _buildToolBar(),
-
               ///List of content items
               Expanded(
                 child: ListView.builder(
