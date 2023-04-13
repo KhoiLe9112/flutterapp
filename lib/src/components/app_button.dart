@@ -5,10 +5,12 @@ class AppButton extends StatelessWidget {
   String text;
   Color backColor;
   Color textColor;
+  double radius;
   AppButton({
     required this.text,
     required this.backColor,
     required this.textColor,
+    required this.radius,
     super.key,
   });
 
@@ -19,7 +21,7 @@ class AppButton extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         backgroundColor: backColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15)
+          borderRadius: BorderRadius.circular(radius)
         )
       ),
       onPressed: () {},

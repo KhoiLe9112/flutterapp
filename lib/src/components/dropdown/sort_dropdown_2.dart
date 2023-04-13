@@ -3,24 +3,19 @@ import 'package:qlvbdh/src/components/dropdown/dropdown_items.dart';
 import 'package:qlvbdh/src/core/const/text_const.dart';
 import 'package:qlvbdh/src/core/theme/app_color.dart';
 
-class StatusDropDown extends StatefulWidget {
+class SortDropDown2 extends StatefulWidget {
   final double itemHeight;
   final String selectedItem;
   ValueSetter<String> callBack;
   final bool checkIcon;
   final Function() triggerRemove;
 
-  List<String> dropCountryData1 = <String>[
-    AppText.traoDoi,
-    AppText.chuaThucHien,
-    AppText.dangThucHien,
-    AppText.hoanThanh,
-    AppText.choXacNhan,
-    AppText.xinYKienBanHanh,
-    AppText.theoDoi,
+  List<String> dropCountryData2 = <String>[
+    AppText.tangDan,
+    AppText.giamDan,
   ];
 
-  StatusDropDown(
+  SortDropDown2(
       {Key? key,
       required this.itemHeight,
       required this.selectedItem,
@@ -30,10 +25,10 @@ class StatusDropDown extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<StatusDropDown> createState() => _StatusDropdownState();
+  State<SortDropDown2> createState() => _SortDropDown2State();
 }
 
-class _StatusDropdownState extends State<StatusDropDown> {
+class _SortDropDown2State extends State<SortDropDown2> {
   late String selectedItem;
   @override
   void initState() {
@@ -82,7 +77,7 @@ class _StatusDropdownState extends State<StatusDropDown> {
                         child: Row(
                           children: [
                             const Text(
-                              AppText.trangThai,
+                              AppText.sapXep,
                               style: TextStyle(
                                   color: AppColor.darkBlue,
                                   fontSize: 14.0,
@@ -100,72 +95,22 @@ class _StatusDropdownState extends State<StatusDropDown> {
                   ),
                   DropDownItem(
                       checkIcon: widget.checkIcon,
-                      text: widget.dropCountryData1[0],
-                      isSelected: selectedItem == widget.dropCountryData1[0],
+                      text: widget.dropCountryData2[0],
+                      isSelected: selectedItem == widget.dropCountryData2[0],
                       callBack: (value) {
                         widget.callBack.call(value);
                         setState(() {
-                          selectedItem = widget.dropCountryData1[0];
+                          selectedItem = widget.dropCountryData2[0];
                         });
                       },
                       isFirstItem: true),
                   DropDownItem(
                     checkIcon: widget.checkIcon,
-                    text: widget.dropCountryData1[1],
-                    isSelected: selectedItem == widget.dropCountryData1[1],
+                    text: widget.dropCountryData2[1],
+                    isSelected: selectedItem == widget.dropCountryData2[1],
                     callBack: (value) {
                       setState(() {
-                        selectedItem = widget.dropCountryData1[1];
-                      });
-                    },
-                  ),
-                  DropDownItem(
-                    checkIcon: widget.checkIcon,
-                    text: widget.dropCountryData1[2],
-                    isSelected: selectedItem == widget.dropCountryData1[2],
-                    callBack: (value) {
-                      setState(() {
-                        selectedItem = widget.dropCountryData1[2];
-                      });
-                    },
-                  ),
-                  DropDownItem(
-                    checkIcon: widget.checkIcon,
-                    text: widget.dropCountryData1[3],
-                    isSelected: selectedItem == widget.dropCountryData1[3],
-                    callBack: (value) {
-                      setState(() {
-                        selectedItem = widget.dropCountryData1[3];
-                      });
-                    },
-                  ),
-                  DropDownItem(
-                    checkIcon: widget.checkIcon,
-                    text: widget.dropCountryData1[4],
-                    isSelected: selectedItem == widget.dropCountryData1[4],
-                    callBack: (value) {
-                      setState(() {
-                        selectedItem = widget.dropCountryData1[4];
-                      });
-                    },
-                  ),
-                  DropDownItem(
-                    checkIcon: widget.checkIcon,
-                    text: widget.dropCountryData1[5],
-                    isSelected: selectedItem == widget.dropCountryData1[5],
-                    callBack: (value) {
-                      setState(() {
-                        selectedItem = widget.dropCountryData1[5];
-                      });
-                    },
-                  ),
-                  DropDownItem(
-                    checkIcon: widget.checkIcon,
-                    text: widget.dropCountryData1[6],
-                    isSelected: selectedItem == widget.dropCountryData1[6],
-                    callBack: (value) {
-                      setState(() {
-                        selectedItem = widget.dropCountryData1[6];
+                        selectedItem = widget.dropCountryData2[1];
                       });
                     },
                   ),

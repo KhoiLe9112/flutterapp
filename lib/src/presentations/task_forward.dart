@@ -155,6 +155,7 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                           text: 'Chuyển',
                           backColor: AppColor.skyBlue,
                           textColor: Colors.white,
+                          radius: 14,
                         )),
                         const SizedBox(
                           width: 10,
@@ -164,6 +165,7 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                           text: 'Hủy bỏ',
                           backColor: Colors.grey.shade400,
                           textColor: Colors.black,
+                          radius: 14,
                         )),
                       ],
                     ),

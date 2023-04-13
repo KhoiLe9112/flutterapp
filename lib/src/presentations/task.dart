@@ -4,6 +4,7 @@ import 'package:qlvbdh/src/components/dropdown/status_dropdown.dart';
 import 'package:qlvbdh/src/components/dropdown/task_dropdown.dart';
 import 'package:qlvbdh/src/core/theme/app_color.dart';
 
+import '../components/dropdown/sort_dropdown_2.dart';
 import '../components/dropdown/status_dropdown_2.dart';
 
 class TaskScreen extends StatefulWidget {
@@ -272,14 +273,11 @@ class _TaskScreenState extends State<TaskScreen> {
                               triggerRemove: hideDropdown,
                               checkIcon: true,
                               itemHeight: height,
-                              selectedItem: dropdownValue2,
+                              selectedItem: dropdownValue1,
                               callBack: (value) {
                                 setState(() {
-                                  dropdownValue2 = value;
-                                  
-                                  // isDropdownOpened = !isDropdownOpened;
+                                  dropdownValue1 = value;
                                 });
-                                // floatingDropdown?.remove();
                               },
                             ),
                             StatusDropDown2(
@@ -290,28 +288,37 @@ class _TaskScreenState extends State<TaskScreen> {
                               callBack: (value) {
                                 setState(() {
                                   dropdownValue2 = value;
-                                  // isDropdownOpened = !isDropdownOpened;
                                 });
-                                // floatingDropdown?.remove();
                               },
                             )
                           ],
                         )
-                      : SortDropDown(
-                          triggerRemove: hideDropdown,
-                          checkIcon: true,
-                          itemHeight: height,
-                          selectedItem1: dropdownValue1,
-                          selectedItem2: dropdownValue2,
-                          callBack: (value) {
-                            setState(() {
-                              dropdownValue1 = value;
-                              dropdownValue2 = value;
-                              isDropdownOpened = !isDropdownOpened;
-                            });
-                            floatingDropdown?.remove();
-                          },
-                        ),
+                      : Column(
+                          children: [
+                            SortDropDown(
+                              triggerRemove: hideDropdown,
+                              checkIcon: true,
+                              itemHeight: height,
+                              selectedItem: dropdownValue1,
+                              callBack: (value) {
+                                setState(() {
+                                  dropdownValue1 = value;
+                                });
+                              },
+                            ),
+                            SortDropDown2(
+                              triggerRemove: hideDropdown,
+                              checkIcon: true,
+                              itemHeight: height,
+                              selectedItem: dropdownValue2,
+                              callBack: (value) {
+                                setState(() {
+                                  dropdownValue2 = value;
+                                });
+                              },
+                            )
+                          ],
+                        )
             ),
           ),
         ],

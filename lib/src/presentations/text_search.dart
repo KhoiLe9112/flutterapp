@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:qlvbdh/src/components/textfield_custom1.dart';
 
@@ -23,22 +22,20 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
   ///show date picker
   Future<DateTime?> _showDayPicker(BuildContext context) {
     return showDatePicker(
-      context: context, 
-      initialDate: DateTime.now(), 
-      firstDate: DateTime(2014), 
-      lastDate: DateTime(2024)
-    );
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(2014),
+        lastDate: DateTime(2024));
   }
+
   ///menu items
   DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
-    value: item,
-    child: Text(
-      item,
-      style: const TextStyle(
-        fontSize: 32
-      ),
-    ),
-  );
+        value: item,
+        child: Text(
+          item,
+          style: const TextStyle(fontSize: 14, color: Colors.black),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -47,210 +44,228 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
         backgroundColor: Colors.white,
         centerTitle: true,
         title: const Text(
-          'CHI TIẾT  VĂN BẢN',
+          'TÌM KIẾM VĂN BẢN',
           style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.w300,
-            color: Colors.black
-          ),
+              fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black),
         ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          }, 
-          icon: Icon(Icons.arrow_back, size: 40, color: Colors.blue.shade800)
-        )
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.arrow_back,
+                size: 26, color: AppColor.skyBlue)),
       ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              Wrap(
+                runSpacing: 2.0,
+                children: [
+                  ///Nhap van ban
+                  _buildInputTextField(),
 
-      body: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ///Nhap van ban
-            _buildInputTextField(),
-            ///Chon ngay
-            Padding(
-              padding: const EdgeInsets.fromLTRB(25, 0, 25, 5),
-              child: Container(
-                color: Colors.grey.shade300,
-                child: Row(
-                  children: [
-                    _buildDatePickerFrom(context),
-                    _buildDatePickerTo(context)
-                  ],
-                ),
-              ),
-            ),
-            Column(
-              children: [
-                _buildDropDownMenu('Loại văn bản'),
-                _buildDropDownMenu('Lĩnh vực'),
-                _buildDropDownMenu('Cơ quan ban hành'),
-                _buildDropDownMenu('Loại văn bản'),
-                _buildDropDownMenu('Người xử lý'),
-                _buildDropDownMenu('Người thụ lý'),
-              ],
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            _buildSearchButton(context)
-          ],
-        ),
-      );
-  }
-
-  Padding _buildInputTextField() {
-    return Padding(
-            padding: const EdgeInsets.fromLTRB(25, 35, 25, 5),
-            child: Container(
-              color: Colors.grey.shade300,
-              child: Column(
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.only(top: 10.0, left: 20),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Trích yếu',
-                        style: TextStyle(
-                          fontSize: 28,
-                        ),
+                  ///Chon ngay
+                  Container(
+                    color: Colors.grey.shade200,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Row(
+                        children: [
+                          _buildDatePickerFrom(context),
+                          _buildDatePickerTo(context)
+                        ],
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(25, 10, 25, 27),
-                    child: TextFieldCustom1()
-                  )
+                  _buildDropDownMenu('Loại văn bản'),
+                  _buildDropDownMenu('Lĩnh vực'),
+                  _buildDropDownMenu('Cơ quan ban hành'),
+                  _buildDropDownMenu('Loại văn bản'),
+                  _buildDropDownMenu('Người xử lý'),
+                  _buildDropDownMenu('Người thụ lý'),
                 ],
               ),
+              const SizedBox(
+                height: 15,
+              ),
+              _buildSearchButton(context)
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Container _buildInputTextField() {
+    return Container(
+      color: Colors.grey.shade200,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        child: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Trích yếu',
+                  style: TextStyle(fontSize: 14, color: Colors.black),
+                ),
+              ),
             ),
-          );
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15.0),
+              child: Container(
+                color: Colors.white,
+                width: MediaQuery.of(context).size.width,
+                height: 35,
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: const TextField(
+                  textAlign: TextAlign.start,
+                  style: TextStyle(fontSize: 14, color: Colors.black),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 
   Expanded _buildDatePickerTo(BuildContext context) {
     return Expanded(
-                    child: Column(
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(top: 10.0),
-                          child: Text(
-                            'Đến ngày',
-                            style: TextStyle(
-                              fontSize: 28,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                        padding: const EdgeInsets.fromLTRB(7, 10, 25, 27),
-                          child: Container(
-                            color: Colors.white,
-                            height: 60,
-                            padding: const EdgeInsets.symmetric(horizontal: 15),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "${_dateTimeTo.day}/${_dateTimeTo.month}/${_dateTimeTo.year}",
-                                  style: const TextStyle(
-                                    fontSize: 22
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () async{
-                                    _dateTimeTo = (await _showDayPicker(context))!;
-                                    setState(() {
-                                      _dateTimeTo;
-                                    });
-                                  },
-                                  child: const Icon(Icons.calendar_month_outlined, size: 32,)),
-                              ],
-                            )
-                          ),
-                        )
-                      ],
-                    )
-                  );
+        child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Đến ngày',
+                style: TextStyle(fontSize: 14, color: Colors.black),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 15.0),
+            child: Container(
+                color: Colors.white,
+                height: 35,
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "${_dateTimeTo.day}/${_dateTimeTo.month}/${_dateTimeTo.year}",
+                      style: const TextStyle(fontSize: 14),
+                    ),
+                    GestureDetector(
+                        onTap: () async {
+                          _dateTimeTo = (await _showDayPicker(context))!;
+                          setState(() {
+                            _dateTimeTo;
+                          });
+                        },
+                        child: const Icon(
+                          Icons.calendar_month_outlined,
+                          size: 18,
+                        )),
+                  ],
+                )),
+          )
+        ],
+      ),
+    ));
   }
 
   Expanded _buildDatePickerFrom(BuildContext context) {
     return Expanded(
-                    child: Column(
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(top: 10.0),
-                          child: Text(
-                          'Từ ngày',
-                            style: TextStyle(
-                              fontSize: 28,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(25, 10, 7, 27),
-                          child: Container(
-                            color: Colors.white,
-                            height: 60,
-                            padding: const EdgeInsets.symmetric(horizontal: 15),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "${_dateTimeFrom.day}/${_dateTimeFrom.month}/${_dateTimeFrom.year}",
-                                  style: const TextStyle(
-                                    fontSize: 22
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () async{
-                                    _dateTimeFrom = (await _showDayPicker(context))!;
-                                    setState(() {
-                                      _dateTimeFrom;
-                                    });
-                                  },
-                                  child: const Icon(Icons.calendar_month_outlined, size: 32,)),
-                              ],
-                            )
-                          ),
-                        )
-                      ],
-                    )
-                  );
+        child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Từ ngày',
+                style: TextStyle(fontSize: 14, color: Colors.black),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20.0),
+            child: Container(
+                color: Colors.white,
+                height: 35,
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "${_dateTimeFrom.day}/${_dateTimeFrom.month}/${_dateTimeFrom.year}",
+                      style: const TextStyle(fontSize: 14),
+                    ),
+                    GestureDetector(
+                        onTap: () async {
+                          _dateTimeFrom = (await _showDayPicker(context))!;
+                          setState(() {
+                            _dateTimeFrom;
+                          });
+                        },
+                        child: const Icon(
+                          Icons.calendar_month_outlined,
+                          size: 18,
+                        )),
+                  ],
+                )),
+          )
+        ],
+      ),
+    ));
   }
 
-  Padding _buildDropDownMenu(String text) {
-    return Padding(
-                padding: const EdgeInsets.fromLTRB(25, 0, 25, 5),
-                child: Container(
-                  color: Colors.grey.shade300,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(25, 14, 25, 14),
-                    child: DropdownButton<String>(
-                      isExpanded: true,
-                      value: itemValue,
-                      iconSize: 36,
-                      icon: const Icon(Icons.arrow_drop_down_rounded),
-                      items: items.map(buildMenuItem).toList(),
-                      hint: Text(
-                        text,
-                        style: const TextStyle(
-                          fontSize: 32,
-                        ),
-                      ),
-                      onChanged: (value) => setState(() {
-                        itemValue = value;
-                      }),
-                    ),
-                  ),
-                ),
-              );
+  Container _buildDropDownMenu(String text) {
+    return Container(
+      color: Colors.grey.shade200,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
+        child: DropdownButton<String>(
+          isExpanded: true,
+          value: itemValue,
+          iconSize: 22,
+          icon: const Icon(Icons.keyboard_arrow_down),
+          items: items.map(buildMenuItem).toList(),
+          hint: Text(
+            text,
+            style: const TextStyle(fontSize: 14, color: Colors.black),
+          ),
+          onChanged: (value) => setState(() {
+            itemValue = value;
+          }),
+        ),
+      ),
+    );
   }
 
   Padding _buildSearchButton(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0),
-      child: AppButton(text: 'Tìm kiếm', backColor: AppColor.darkBlue, textColor: Colors.white),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: AppButton(
+        text: 'Tìm kiếm',
+        backColor: AppColor.skyBlue,
+        textColor: Colors.white,
+        radius: 24,
+      ),
     );
   }
 }
-
