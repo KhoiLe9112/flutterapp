@@ -39,12 +39,7 @@ class _SortDropDown2State extends State<SortDropDown2> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[
-        ///sizedbox dùng cho khoảng cách nhỏ <5
-        const SizedBox(
-          height: 5,
-        ),
-
+      children: [
         ///material giống container
         Material(
           color: Colors.transparent,
@@ -110,6 +105,7 @@ class _SortDropDown2State extends State<SortDropDown2> {
                     isSelected: selectedItem == widget.dropCountryData2[1],
                     callBack: (value) {
                       setState(() {
+                        widget.callBack.call(value);
                         selectedItem = widget.dropCountryData2[1];
                       });
                     },

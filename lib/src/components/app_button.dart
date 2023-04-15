@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:qlvbdh/src/presentations/search_result.dart';
 
 class AppButton extends StatelessWidget {
   String text;

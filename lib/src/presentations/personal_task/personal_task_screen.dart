@@ -21,7 +21,8 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
   int opinion = 12;
 
   ///xác định màn hình cần bind dữ liệu vào
-  GlobalKey? actionKey;
+  // GlobalKey? actionKey;
+  final actionKey = GlobalKey();
   double height = 0, width = 0, xPosition = 0, yPosition = 0;
   bool isDropdownOpened = false;
   OverlayEntry? floatingDropdown;
@@ -49,11 +50,17 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.add, size: 26, color: AppColor.darkBlue),
+            icon: SvgPicture.asset(
+              'assets/icons/add_icon.svg',
+              width: 16,
+            ),
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.search, size: 26, color: AppColor.darkBlue),
+            icon: SvgPicture.asset(
+              'assets/icons/search_icon.svg',
+              width: 16,
+            ),
           ),
         ],
       ),
@@ -91,7 +98,8 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/Group 137.png'), fit: BoxFit.fill)),
+              image: AssetImage('assets/backgrounds/background1.png'),
+              fit: BoxFit.fill)),
     );
   }
 
@@ -99,12 +107,12 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
     return Container(
       color: Colors.lightBlue.shade100,
       child: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Row(
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-                padding: const EdgeInsets.only(top: 15, bottom: 15),
+                padding: const EdgeInsets.symmetric(vertical: 15),
                 child: Text(
                   dropdownValue,
                   style: const TextStyle(
@@ -112,16 +120,12 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
                       fontWeight: FontWeight.w500,
                       color: Colors.black),
                 )),
-            // IconButton(
-            //   icon: Image.asset('', fit: BoxFit.fill,),
-            //   onPressed: () {},
-            // ),
-            // SvgPicture.asset('assets/Path 690.svg', width: 10,),
             GestureDetector(
+                key: actionKey,
                 onTap: () {
                   setState(() {
                     findDropdownPosition();
-                    floatingDropdown = _createFloatingDropdown(200.0, 88.0, 110.0);
+                    floatingDropdown = _createFloatingDropdown(-2.0, -12.0);
                     Overlay.of(context).insert(floatingDropdown!);
                   });
                 },
@@ -202,7 +206,7 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
   }
 
   ///hiển thị dropdown
-  OverlayEntry _createFloatingDropdown(double x, double y, double z) {
+  OverlayEntry _createFloatingDropdown(double x, double y) {
     return OverlayEntry(builder: (context) {
       return Stack(
         children: [
@@ -219,9 +223,9 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
           )),
           //position of Overlay
           Positioned(
-            width: x,
-            left: xPosition + y,
-            top: yPosition + height + z,
+            width: 200.0,
+            left: xPosition + x,
+            top: yPosition + height + y,
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
               decoration: const BoxDecoration(boxShadow: [
@@ -259,15 +263,22 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
   ///Hàm tìm vị trí dropdown
   void findDropdownPosition() {
     ///lấy chiều cao, chiều rộng của dropdown
-    RenderBox? renderBox =
-        actionKey?.currentContext?.findRenderObject() as RenderBox?;
-    height = renderBox?.size.height ?? 0;
-    width = renderBox?.size.width ?? 0;
+    // RenderBox? renderBox =
+    //     actionKey?.currentContext?.findRenderObject() as RenderBox?;
+    // height = renderBox?.size.height ?? 0;
+    // width = renderBox?.size.width ?? 0;
+    // ///lấy vị trí hiện tại
+    // Offset? offset = renderBox?.localToGlobal(Offset.zero);
+    // xPosition = offset?.dx ?? 0;
+    // yPosition = offset?.dy ?? 0;
 
-    ///lấy vị trí hiện tại
-    Offset? offset = renderBox?.localToGlobal(Offset.zero);
-    xPosition = offset?.dx ?? 0;
-    yPosition = offset?.dy ?? 0;
+    RenderBox renderBox =
+        actionKey.currentContext!.findRenderObject() as RenderBox;
+    height = renderBox.size.height;
+    width = renderBox.size.width;
+    Offset position = renderBox.localToGlobal(Offset.zero);
+    xPosition = position.dx;
+    yPosition = position.dy;
   }
 
   ///Hàm tắt dropdown

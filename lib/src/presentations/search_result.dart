@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:qlvbdh/src/presentations/text_details.dart';
 
 import '../core/theme/app_color.dart';
@@ -78,17 +79,17 @@ class SearchResultScreen extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const TextDetailsScreen()));
-                      },
-                      child: const Icon(
-                        Icons.sort,
-                        size: 30,
-                      )),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const TextDetailsScreen()));
+                    },
+                    child: SvgPicture.asset(
+                      'assets/icons/sort_icon.svg',
+                      width: 24,
+                    ),
+                  ),
                 ],
               ),
             ),

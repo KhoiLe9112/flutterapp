@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:qlvbdh/src/components/app_button.dart';
 
 import '../core/theme/app_color.dart';
@@ -54,11 +55,17 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.add, size: 26, color: AppColor.darkBlue),
+            icon: SvgPicture.asset(
+              'assets/icons/add_icon.svg',
+              width: 16,
+            ),
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.search, size: 26, color: AppColor.darkBlue),
+            icon: SvgPicture.asset(
+              'assets/icons/search_icon.svg',
+              width: 16,
+            ),
           ),
         ],
       ),
@@ -213,16 +220,17 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                         style: const TextStyle(fontSize: 14),
                       ),
                       GestureDetector(
-                          onTap: () async {
-                            _dateTime = (await _showDayPicker(context))!;
-                            setState(() {
-                              _dateTime;
-                            });
-                          },
-                          child: const Icon(
-                            Icons.calendar_month_outlined,
-                            size: 18,
-                          )),
+                        onTap: () async {
+                          _dateTime = (await _showDayPicker(context))!;
+                          setState(() {
+                            _dateTime;
+                          });
+                        },
+                        child: SvgPicture.asset(
+                          'assets/icons/calendar_icon.svg',
+                          width: 16,
+                        ),
+                      ),
                     ],
                   )),
             )

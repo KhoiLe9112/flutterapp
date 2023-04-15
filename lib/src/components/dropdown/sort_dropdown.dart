@@ -110,6 +110,7 @@ class _SortDropDownState extends State<SortDropDown> {
                     isSelected: selectedItem == widget.dropCountryData1[1],
                     callBack: (value) {
                       setState(() {
+                        widget.callBack.call(value);
                         selectedItem = widget.dropCountryData1[1];
                       });
                     },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:qlvbdh/src/components/dropdown/sort_dropdown.dart';
 import 'package:qlvbdh/src/components/dropdown/status_dropdown.dart';
 import 'package:qlvbdh/src/components/dropdown/task_dropdown.dart';
@@ -15,13 +16,18 @@ class TaskScreen extends StatefulWidget {
 }
 
 class _TaskScreenState extends State<TaskScreen> {
-  GlobalKey? actionKey;
-  double height = 0, width = 0, xPosition = 0, yPosition = 0;
+  // GlobalKey? actionKey;
+  final taskActionKey = GlobalKey();
+  final statusActionKey = GlobalKey();
+  final sortActionKey = GlobalKey();
+  double height = 0, xPosition = 0, yPosition = 0;
   bool isDropdownOpened = false;
   OverlayEntry? floatingDropdown;
   String dropdownValue = "Việc của tôi";
-  String dropdownValue1 = "";
-  String dropdownValue2 = "";
+  String statusDropdownValue1 = "";
+  String statusDropdownValue2 = "";
+  String sortDropdownValue1 = "";
+  String sortDropdownValue2 = "";
   bool dropDownCallBack = false;
 
   @override
@@ -44,11 +50,17 @@ class _TaskScreenState extends State<TaskScreen> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.add, size: 26, color: AppColor.darkBlue),
+            icon: SvgPicture.asset(
+              'assets/icons/add_icon.svg',
+              width: 16,
+            ),
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.search, size: 26, color: AppColor.darkBlue),
+            icon: SvgPicture.asset(
+              'assets/icons/search_icon.svg',
+              width: 16,
+            ),
           ),
         ],
       ),
@@ -78,7 +90,8 @@ class _TaskScreenState extends State<TaskScreen> {
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/Group 137.png'), fit: BoxFit.fill)),
+              image: AssetImage('assets/backgrounds/background1.png'),
+              fit: BoxFit.fill)),
     );
   }
 
@@ -86,14 +99,14 @@ class _TaskScreenState extends State<TaskScreen> {
     return Container(
       color: Colors.lightBlue.shade100,
       child: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
                 Padding(
-                    padding: const EdgeInsets.only(top: 15, bottom: 15),
+                    padding: const EdgeInsets.symmetric(vertical: 15),
                     child: Text(
                       dropdownValue,
                       style: const TextStyle(
@@ -102,11 +115,12 @@ class _TaskScreenState extends State<TaskScreen> {
                           color: Colors.black),
                     )),
                 GestureDetector(
+                    key: taskActionKey,
                     onTap: () {
                       setState(() {
-                        findDropdownPosition();
+                        findDropdownPosition(taskActionKey);
                         floatingDropdown =
-                            _createFloatingDropdown(88.0, 110.0, true, false);
+                            _createFloatingDropdown(-5.0, -12.0, true, false);
                         Overlay.of(context).insert(floatingDropdown!);
                       });
                     },
@@ -120,11 +134,12 @@ class _TaskScreenState extends State<TaskScreen> {
             Row(
               children: [
                 GestureDetector(
+                    key: statusActionKey,
                     onTap: () {
                       setState(() {
-                        findDropdownPosition();
+                        findDropdownPosition(statusActionKey);
                         floatingDropdown =
-                            _createFloatingDropdown(120.0, 110.0, false, true);
+                            _createFloatingDropdown(-170.0, -6.0, false, true);
                         Overlay.of(context).insert(floatingDropdown!);
                       });
                     },
@@ -134,22 +149,23 @@ class _TaskScreenState extends State<TaskScreen> {
                       size: 24,
                     )),
                 const SizedBox(
-                  width: 5,
+                  width: 8,
                 ),
                 GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        findDropdownPosition();
-                        floatingDropdown =
-                            _createFloatingDropdown(150.0, 110.0, false, false);
-                        Overlay.of(context).insert(floatingDropdown!);
-                      });
-                    },
-                    child: const Icon(
-                      Icons.sort,
-                      color: Colors.black,
-                      size: 24,
-                    )),
+                  key: sortActionKey,
+                  onTap: () {
+                    setState(() {
+                      findDropdownPosition(sortActionKey);
+                      floatingDropdown =
+                          _createFloatingDropdown(-160.0, -6.0, false, false);
+                      Overlay.of(context).insert(floatingDropdown!);
+                    });
+                  },
+                  child: SvgPicture.asset(
+                    'assets/icons/sort_icon.svg',
+                    width: 24,
+                  ),
+                ),
               ],
             ),
           ],
@@ -238,87 +254,86 @@ class _TaskScreenState extends State<TaskScreen> {
             left: xPosition + x,
             top: yPosition + height + y,
             child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 16),
-              decoration: const BoxDecoration(boxShadow: [
-                // Shadow for dropbox
-                BoxShadow(
-                  blurRadius: 25.0,
-                  color: Colors.black,
-                  spreadRadius: 0.1,
-                  offset: Offset(
-                    10,
-                    10,
-                  ),
-                )
-              ]),
-              child: checkTasks
-                  ? TaskDropDown(
-                      triggerRemove: hideDropdown,
-                      checkIcon: false,
-                      itemHeight: height,
-                      selectedItem: dropdownValue,
-                      callBack: (value) {
-                        setState(() {
-                          dropdownValue = value;
-                          isDropdownOpened = !isDropdownOpened;
-                        });
-                        floatingDropdown?.remove();
-                      },
-                    )
-                  : checkStatus
-                      ? Column(
-                          children: [
-                            StatusDropDown(
-                              triggerRemove: hideDropdown,
-                              checkIcon: true,
-                              itemHeight: height,
-                              selectedItem: dropdownValue1,
-                              callBack: (value) {
-                                setState(() {
-                                  dropdownValue1 = value;
-                                });
-                              },
-                            ),
-                            StatusDropDown2(
-                              triggerRemove: hideDropdown,
-                              checkIcon: true,
-                              itemHeight: height,
-                              selectedItem: dropdownValue2,
-                              callBack: (value) {
-                                setState(() {
-                                  dropdownValue2 = value;
-                                });
-                              },
-                            )
-                          ],
-                        )
-                      : Column(
-                          children: [
-                            SortDropDown(
-                              triggerRemove: hideDropdown,
-                              checkIcon: true,
-                              itemHeight: height,
-                              selectedItem: dropdownValue1,
-                              callBack: (value) {
-                                setState(() {
-                                  dropdownValue1 = value;
-                                });
-                              },
-                            ),
-                            SortDropDown2(
-                              triggerRemove: hideDropdown,
-                              checkIcon: true,
-                              itemHeight: height,
-                              selectedItem: dropdownValue2,
-                              callBack: (value) {
-                                setState(() {
-                                  dropdownValue2 = value;
-                                });
-                              },
-                            )
-                          ],
-                        )
-            ),
+                margin: const EdgeInsets.symmetric(horizontal: 16),
+                decoration: const BoxDecoration(boxShadow: [
+                  // Shadow for dropbox
+                  BoxShadow(
+                    blurRadius: 25.0,
+                    color: Colors.black,
+                    spreadRadius: 0.1,
+                    offset: Offset(
+                      10,
+                      10,
+                    ),
+                  )
+                ]),
+                child: checkTasks
+                    ? TaskDropDown(
+                        triggerRemove: hideDropdown,
+                        checkIcon: false,
+                        itemHeight: height,
+                        selectedItem: dropdownValue,
+                        callBack: (value) {
+                          setState(() {
+                            dropdownValue = value;
+                            isDropdownOpened = !isDropdownOpened;
+                          });
+                          floatingDropdown?.remove();
+                        },
+                      )
+                    : checkStatus
+                        ? Column(
+                            children: [
+                              StatusDropDown(
+                                triggerRemove: hideDropdown,
+                                checkIcon: true,
+                                itemHeight: height,
+                                selectedItem: statusDropdownValue1,
+                                callBack: (value) {
+                                  setState(() {
+                                    statusDropdownValue1 = value;
+                                  });
+                                },
+                              ),
+                              StatusDropDown2(
+                                triggerRemove: hideDropdown,
+                                checkIcon: true,
+                                itemHeight: height,
+                                selectedItem: statusDropdownValue2,
+                                callBack: (value) {
+                                  setState(() {
+                                    statusDropdownValue2 = value;
+                                  });
+                                },
+                              )
+                            ],
+                          )
+                        : Column(
+                            children: [
+                              SortDropDown(
+                                triggerRemove: hideDropdown,
+                                checkIcon: true,
+                                itemHeight: height,
+                                selectedItem: sortDropdownValue1,
+                                callBack: (value) {
+                                  setState(() {
+                                    sortDropdownValue1 = value;
+                                  });
+                                },
+                              ),
+                              SortDropDown2(
+                                triggerRemove: hideDropdown,
+                                checkIcon: true,
+                                itemHeight: height,
+                                selectedItem: sortDropdownValue2,
+                                callBack: (value) {
+                                  setState(() {
+                                    sortDropdownValue2 = value;
+                                  });
+                                },
+                              )
+                            ],
+                          )),
           ),
         ],
       );
@@ -326,21 +341,13 @@ class _TaskScreenState extends State<TaskScreen> {
   }
 
   ///Hàm tìm vị trí dropdown
-  void findDropdownPosition() {
-    ///lấy chiều cao, chiều rộng của dropdown
-    RenderBox? renderBox =
-        actionKey?.currentContext?.findRenderObject() as RenderBox?;
-    height = renderBox?.size.height ?? 0;
-    width = renderBox?.size.width ?? 0;
-
-    ///lấy vị trí hiện tại
-    Offset? offset = renderBox?.localToGlobal(Offset.zero);
-    xPosition = offset?.dx ?? 0;
-    yPosition = offset?.dy ?? 0;
-    // print(height);
-    // print(width);
-    // print(xPosition);
-    // print(yPosition);
+  void findDropdownPosition(GlobalKey key) {
+    RenderBox renderBox =
+        key.currentContext!.findRenderObject() as RenderBox;
+      height = renderBox.size.height;
+    Offset position = renderBox.localToGlobal(Offset.zero);
+      xPosition = position.dx;
+      yPosition = position.dy;
   }
 
   ///Hàm tắt dropdown

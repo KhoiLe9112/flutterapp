@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:qlvbdh/src/core/theme/app_color.dart';
 
 class CommunicationScreen extends StatelessWidget {
-  CommunicationScreen({super.key});
+  const CommunicationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,24 +20,23 @@ class CommunicationScreen extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon:
-                const Icon(Icons.arrow_back, size: 26, color: AppColor.skyBlue)),
+            icon: const Icon(Icons.arrow_back,
+                size: 26, color: AppColor.skyBlue)),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.add, size: 26, color: AppColor.darkBlue),
+            // icon: const Icon(Icons.add, size: 26, color: AppColor.darkBlue),
+            icon: SvgPicture.asset(
+              'assets/icons/add_icon.svg',
+              width: 16,
+            ),
           ),
-          // IconButton(
-          //   iconSize: 10,
-          //   icon: Image.asset(
-          //     'assets/search-icon.png',
-          //     fit: BoxFit.fill,
-          //   ),
-          //   onPressed: () {},
-          // ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.search, size: 26, color: AppColor.darkBlue),
+            icon: SvgPicture.asset(
+              'assets/icons/search_icon.svg',
+              width: 16,
+            ),
           ),
         ],
       ),
@@ -49,17 +49,17 @@ class CommunicationScreen extends StatelessWidget {
               children: [
                 _buildToolBar(),
                 _buildCommunication('Cổng dịch vụ công trực tuyến',
-                    'assets/avatar1.png', 'Lê Quốc Thịnh'),
+                    'assets/avatars/avatar1.png', 'Lê Quốc Thịnh'),
                 _buildCommunication(
                     'Tiếp tục Tao trang và cài các module, cấu hình, phần mềm HSCV cho các trang điều hành của các xã thuộc UBND Huyện Phú Lộc',
-                    'assets/avatar2.png',
+                    'assets/avatars/avatar2.png',
                     'Nguyễn Văn Tình'),
                 _buildCommunication(
                     '3116/UBND-CNTT - V/v thực hiện nội dung Xây dựng kiến trúc các kênh tương tác Chính quyền',
-                    'assets/avatar3.png',
+                    'assets/avatars/avatar3.png',
                     'Lê Vĩnh Chiến'),
                 _buildCommunication('Nhật ký marketing & sales',
-                    'assets/avatar2.png', 'Nguyễn Văn Tình'),
+                    'assets/avatars/avatar2.png', 'Nguyễn Văn Tình'),
               ],
             ),
           )
@@ -70,25 +70,25 @@ class CommunicationScreen extends StatelessWidget {
 
   Container _buildBackground() {
     return Container(
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/Group 137.png'),
-                  fit: BoxFit.fill)),
-        );
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/backgrounds/background1.png'),
+              fit: BoxFit.fill)),
+    );
   }
 
   Container _buildToolBar() {
     return Container(
       color: Colors.lightBlue.shade100,
       child: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: const [
                 Padding(
-                    padding: EdgeInsets.only(top: 15, bottom: 15),
+                    padding: EdgeInsets.symmetric(vertical: 15),
                     child: Text(
                       'Trao đổi',
                       style: TextStyle(
@@ -101,22 +101,28 @@ class CommunicationScreen extends StatelessWidget {
             Row(
               children: [
                 GestureDetector(
-                    onTap: () {},
-                    child: const Icon(
-                      Icons.filter_alt_sharp,
-                      color: Colors.black,
-                      size: 24,
-                    )),
+                  onTap: () {},
+                  child:
+                      const Icon(
+                        Icons.filter_alt_sharp,
+                        color: Colors.black,
+                        size: 24,
+                      )
+                  //     SvgPicture.asset(
+                  //   'assets/icons/filter_icon.svg',
+                  //   width: 24,
+                  // ),
+                ),
                 const SizedBox(
                   width: 5,
                 ),
                 GestureDetector(
-                    onTap: () {},
-                    child: const Icon(
-                      Icons.sort,
-                      color: Colors.black,
-                      size: 24,
-                    )),
+                  onTap: () {},
+                  child: SvgPicture.asset(
+                    'assets/icons/sort_icon.svg',
+                    width: 24,
+                  ),
+                ),
               ],
             ),
           ],
@@ -224,11 +230,10 @@ class CommunicationScreen extends StatelessWidget {
                           fontWeight: FontWeight.w300,
                           color: AppColor.skyBlue))
                 ])),
-                const Icon(
-                  Icons.chat_bubble_outline,
-                  color: AppColor.skyBlue,
-                  size: 30,
-                )
+                SvgPicture.asset(
+                  'assets/icons/chat_icon.svg',
+                  width: 28,
+                ),
               ],
             ),
             const SizedBox(
