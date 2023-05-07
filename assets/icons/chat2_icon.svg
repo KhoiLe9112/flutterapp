@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29.667" height="29.667" viewBox="0 0 29.667 29.667">
+  <g id="Group_189" data-name="Group 189" transform="translate(-320.333 -75)">
+    <g id="outline-chat_bubble_outline-24px" transform="translate(320.333 75)">
+      <path id="Path_698" data-name="Path 698" d="M0,0H29.667V29.667H0Z" fill="none"/>
+      <path id="Path_699" data-name="Path 699" d="M24.25,2H4.472A2.479,2.479,0,0,0,2,4.472v22.25l4.944-4.944H24.25a2.479,2.479,0,0,0,2.472-2.472V4.472A2.479,2.479,0,0,0,24.25,2Zm0,17.305H6.944L4.472,21.778V4.472H24.25Z" transform="translate(0.472 0.472)" fill="#008aff"/>
+    </g>
+    <path id="Add" d="M-4616.135,8.833V4.969H-4620v-1.1h3.865V0h1.1V3.864h3.865v1.1h-3.865V8.833Z" transform="translate(4951 83)" fill="#008aff"/>
+  </g>
+</svg>

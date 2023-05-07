@@ -159,20 +159,28 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                       children: [
                         Expanded(
                             child: AppButton(
+                          // action: ,
                           text: 'Chuyển',
                           backColor: AppColor.skyBlue,
                           textColor: Colors.white,
                           radius: 14,
+                          textSize: 14,
+                          horizontal: 14,
+                          vertical: 14,
                         )),
                         const SizedBox(
                           width: 10,
                         ),
                         Expanded(
                             child: AppButton(
+                          // action: ,
                           text: 'Hủy bỏ',
                           backColor: Colors.grey.shade400,
                           textColor: Colors.black,
                           radius: 14,
+                          textSize: 14,
+                          horizontal: 14,
+                          vertical: 14,
                         )),
                       ],
                     ),

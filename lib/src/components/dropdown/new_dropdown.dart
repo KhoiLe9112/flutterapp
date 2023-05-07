@@ -3,19 +3,19 @@ import 'package:qlvbdh/src/components/dropdown/dropdown_items.dart';
 import 'package:qlvbdh/src/core/const/text_const.dart';
 import 'package:qlvbdh/src/core/theme/app_color.dart';
 
-class TaskDropDown extends StatelessWidget {
+class NewDropDown extends StatelessWidget {
   final double itemHeight;
   final String selectedItem;
   final Function() triggerRemove;
   ValueSetter<String> callBack;
   final bool checkIcon;
   List<String> dropCountryData = <String>[
-    AppText.viecCuaToi,
-    AppText.viecPhongban,
-    AppText.viecCoQuan
+    AppText.congViec,
+    AppText.hoSoDuAn,
+    AppText.vanBanDuThao,
   ];
 
-  TaskDropDown(
+  NewDropDown(
       {Key? key,
       required this.itemHeight,
       required this.selectedItem,
@@ -59,13 +59,13 @@ class TaskDropDown extends StatelessWidget {
                       child: Row(
                         children: [
                           const Text(
-                            AppText.congViec,
+                            AppText.taoMoi,
                             style: TextStyle(
                                 color: AppColor.darkBlue,
                                 fontSize: 14.0,
                                 fontWeight: FontWeight.bold),
                           ),
-                          const Spacer(flex: 1),
+                          const Spacer(),
                           Icon(Icons.arrow_drop_up, color: Colors.grey.shade700,)
                         ],
                       ),
@@ -88,7 +88,7 @@ class TaskDropDown extends StatelessWidget {
                     text: dropCountryData[2],
                     isSelected: selectedItem == dropCountryData[2],
                     callBack: callBack,
-                  ),
+                  )
                 ],
               ),
             ),

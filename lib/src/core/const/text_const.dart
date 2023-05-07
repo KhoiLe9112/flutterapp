@@ -26,4 +26,11 @@ class AppText {
   static const tangDan = "Tăng dần";
   static const giamDan = "Giảm dần";
 
+  static const thongTinKhac = "Thông tin khác";
+  static const congViecCon = "Công việc con";
+  static const yKienTraoDoi = "Ý kiến trao đổi";
+
+  static const taoMoi = "Tạo mới";
+  static const hoSoDuAn = "Hồ sơ/Dự án";
+  static const vanBanDuThao = "Văn bản dự thảo";
 }

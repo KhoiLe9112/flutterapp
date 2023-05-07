@@ -67,19 +67,22 @@ class _TaskScreenState extends State<TaskScreen> {
       body: Stack(
         children: [
           _buildBackground(),
-          Column(
-            children: [
-              ///Toolbar
-              _buildToolBar(),
-              ///List of content items
-              Expanded(
-                child: ListView.builder(
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                ///Toolbar
+                _buildToolBar(),
+                ///List of content items
+                ListView.builder(
+                    ///Tat scroll cua listview
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
                     itemCount: 15,
                     itemBuilder: (context, index) {
                       return _buildTask();
-                    }),
-              )
-            ],
+                    })
+              ],
+            ),
           ),
         ],
       ),

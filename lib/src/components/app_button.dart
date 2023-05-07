@@ -5,11 +5,19 @@ class AppButton extends StatelessWidget {
   Color backColor;
   Color textColor;
   double radius;
+  double textSize;
+  double horizontal;
+  double vertical;
+  Future<Object?>? navigate;
   AppButton({
+    this.navigate,
     required this.text,
     required this.backColor,
     required this.textColor,
     required this.radius,
+    required this.textSize,
+    required this.horizontal,
+    required this.vertical,
     super.key,
   });
 
@@ -17,20 +25,22 @@ class AppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.symmetric(horizontal: horizontal, vertical: vertical),
         backgroundColor: backColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(radius)
         )
       ),
-      onPressed: () {},
+      onPressed: () async{
+        await navigate;
+      },
       child: Center(
         child: Text(
           text,
           style: TextStyle(
               fontWeight: FontWeight.bold,
               color: textColor,
-              fontSize: 14),
+              fontSize: textSize),
         ),
       ),
     );
