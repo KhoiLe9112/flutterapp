@@ -8,7 +8,7 @@ class AppButton extends StatelessWidget {
   double textSize;
   double horizontal;
   double vertical;
-  Future<Object?>? navigate;
+  Function()? navigate;
   AppButton({
     this.navigate,
     required this.text,
@@ -25,15 +25,12 @@ class AppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.symmetric(horizontal: horizontal, vertical: vertical),
-        backgroundColor: backColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(radius)
-        )
-      ),
-      onPressed: () async{
-        await navigate;
-      },
+          padding:
+              EdgeInsets.symmetric(horizontal: horizontal, vertical: vertical),
+          backgroundColor: backColor,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(radius))),
+      onPressed: navigate,
       child: Center(
         child: Text(
           text,

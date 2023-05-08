@@ -260,7 +260,7 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: AppButton(
-        navigate: Navigator.pushNamed(context, '/searchresult'),
+        navigate: _triggerNavigate,
         text: 'Tìm kiếm',
         backColor: AppColor.skyBlue,
         textColor: Colors.white,
@@ -272,7 +272,7 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
     );
   }
 
-  // void _triggerNavigate() {
-  //   Navigator.pushNamed(context, '/searchresult');
-  // }
+  void _triggerNavigate() {
+    Navigator.pushNamed(context, '/searchresult');
+  }
 }
