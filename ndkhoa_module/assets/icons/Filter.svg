@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="21" viewBox="0 0 23 21">
+  <defs>
+    <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 68 62">
+      <image width="68" height="62" xlink:href="Filter-image.png"/>
+    </pattern>
+  </defs>
+  <rect id="Filter" width="23" height="21" fill="url(#pattern)"/>
+</svg>
