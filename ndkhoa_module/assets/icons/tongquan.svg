@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="16" height="16" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Symbol_18_2" data-name="Symbol 18 – 2" clip-path="url(#clip-path)">
+    <path id="Path_102" data-name="Path 102" d="M0,14H16v2H0ZM0,7H16v5H0ZM7,0h9V5H7ZM0,0H5V5H0Z" fill="#fff" fill-rule="evenodd"/>
+  </g>
+</svg>
