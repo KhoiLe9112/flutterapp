@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:ndkhoa_module/src/presentations/text_details.dart';
 import 'package:ndkhoa_module/src/router/app_router.dart';
 
 import '../core/theme/app_color.dart';
@@ -20,7 +19,7 @@ class SearchResultScreen extends StatelessWidget {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back,
-                size: 26, color: AppColor.skyBlue)),
+                size: 30, color: AppColor.skyBlue)),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -28,24 +27,24 @@ class SearchResultScreen extends StatelessWidget {
           children: [
             ///Mo ta
             Padding(
-              padding: const EdgeInsets.only(left: 45, top: 18, bottom: 18),
+              padding: const EdgeInsets.only(left: 50.0, top: 22.0, bottom: 22.0),
               child: Column(
                 children: const [
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'Loại văn bản: Công văn',
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: 18, color: AppColor.darkBlue),
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 15,
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'Cơ quan ban hành: UBND tỉnh Thừa Thiên Huế',
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: 18, color: AppColor.darkBlue),
                     ),
                   ),
                 ],
@@ -55,45 +54,36 @@ class SearchResultScreen extends StatelessWidget {
             Container(
               color: Colors.lightBlue.shade100,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 35.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      padding: const EdgeInsets.symmetric(vertical: 20.0),
                       child: RichText(
                         text: const TextSpan(children: [
                           TextSpan(
                             text: 'Kết quả tìm kiếm\n',
                             style: TextStyle(
-                                height: 1.3,
-                                fontSize: 14,
+                                height: 1.4,
+                                fontSize: 18,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black),
+                                color: AppColor.darkBlue),
                           ),
                           TextSpan(
                             text: 'Tổng số: 15',
                             style: TextStyle(
-                                height: 1.3,
-                                fontSize: 14,
+                                height: 1.4,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w300,
-                                color: Colors.black),
+                                color: AppColor.darkBlue),
                           ),
                         ]),
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const TextDetailsScreen()));
-                      },
-                      child: SvgPicture.asset(
-                        'assets/icons/sort_icon.svg',
-                        width: 24,
-                      ),
+                    SvgPicture.asset(
+                      'assets/icons/sort_icon.svg',
+                      width: 30,
                     ),
                   ],
                 ),
@@ -121,12 +111,12 @@ class SearchResultScreen extends StatelessWidget {
         Get.toNamed(AppRouter.textDetailsScreen);
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: const EdgeInsets.fromLTRB(25.0, 15.0, 50.0 ,15.0),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(5.0),
+              padding: const EdgeInsets.all(10.0),
               child: SvgPicture.asset('assets/icons/point_icon.svg'),
             ),
             Column(
@@ -135,19 +125,19 @@ class SearchResultScreen extends StatelessWidget {
                 const Text(
                   '7288/UBND-TP',
                   style: TextStyle(
-                      // height: 1.3,
-                      fontSize: 14,
+                      height: 1.8,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black),
+                      color: AppColor.darkBlue),
                 ),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width - 60.0,
+                  width: MediaQuery.of(context).size.width - 120.0,
                   child: const Text(
                     'V/v hoàn thành nâng cấp phiên bản phần mềm Quản lý văn bản và điều hành',
                     style: TextStyle(
-                        // height: 1.3,
-                        fontSize: 14,
-                        color: Colors.black),
+                        height: 1.4,
+                        fontSize: 18,
+                        color: AppColor.darkBlue),
                   ),
                 ),
               ],

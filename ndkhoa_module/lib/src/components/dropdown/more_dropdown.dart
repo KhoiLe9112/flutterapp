@@ -29,7 +29,7 @@ class MoreDropDown extends StatelessWidget {
       children: <Widget>[
         ///sizedbox dùng cho khoảng cách nhỏ <5
         const SizedBox(
-          height: 5,
+          height: 5.0,
         ),
         ///material giống container
         Material(
@@ -45,7 +45,7 @@ class MoreDropDown extends StatelessWidget {
               ],
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 12.0),
               child: Column(
                 children: <Widget>[
                   GestureDetector(
@@ -54,14 +54,14 @@ class MoreDropDown extends StatelessWidget {
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 4.0, horizontal: 20.0),
+                          vertical: 8.0, horizontal: 25.0),
                       child: Row(
                         children: [
                           const Text(
                             AppText.thongTinKhac,
                             style: TextStyle(
                                 color: AppColor.darkBlue,
-                                fontSize: 14.0,
+                                fontSize: 18.0,
                                 fontWeight: FontWeight.bold),
                           ),
                           const Spacer(),

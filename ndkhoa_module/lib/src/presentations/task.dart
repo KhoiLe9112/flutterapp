@@ -41,27 +41,27 @@ class _TaskScreenState extends State<TaskScreen> {
         title: const Text(
           'CÔNG VIỆC',
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black),
+              fontSize: 20, fontWeight: FontWeight.w300, color: Colors.black),
         ),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back,
-                size: 26, color: AppColor.skyBlue)),
+                size: 30, color: AppColor.skyBlue)),
         actions: [
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/icons/add_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/icons/search_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
         ],
@@ -104,18 +104,18 @@ class _TaskScreenState extends State<TaskScreen> {
     return Container(
       color: Colors.lightBlue.shade100,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
                 Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15),
+                    padding: const EdgeInsets.symmetric(vertical: 15.0),
                     child: Text(
                       dropdownValue,
                       style: const TextStyle(
-                          fontSize: 13,
+                          fontSize: 18,
                           fontWeight: FontWeight.w500,
                           color: Colors.black),
                     )),
@@ -132,7 +132,7 @@ class _TaskScreenState extends State<TaskScreen> {
                     child: const Icon(
                       Icons.keyboard_arrow_down,
                       color: AppColor.skyBlue,
-                      size: 26,
+                      size: 30,
                     )),
               ],
             ),
@@ -144,17 +144,17 @@ class _TaskScreenState extends State<TaskScreen> {
                       setState(() {
                         findDropdownPosition(statusActionKey);
                         floatingDropdown =
-                            _createFloatingDropdown(-170.0, -6.0, false, true);
+                            _createFloatingDropdown(-170.0, -8.0, false, true);
                         Overlay.of(context).insert(floatingDropdown!);
                       });
                     },
                     child: const Icon(
                       Icons.filter_alt_sharp,
                       color: Colors.black,
-                      size: 24,
+                      size: 28,
                     )),
                 const SizedBox(
-                  width: 8,
+                  width: 10.0,
                 ),
                 GestureDetector(
                   key: sortActionKey,
@@ -162,13 +162,13 @@ class _TaskScreenState extends State<TaskScreen> {
                     setState(() {
                       findDropdownPosition(sortActionKey);
                       floatingDropdown =
-                          _createFloatingDropdown(-160.0, -6.0, false, false);
+                          _createFloatingDropdown(-190.0, -8.0, false, false);
                       Overlay.of(context).insert(floatingDropdown!);
                     });
                   },
                   child: SvgPicture.asset(
                     'assets/icons/sort_icon.svg',
-                    width: 24,
+                    width: 28,
                   ),
                 ),
               ],
@@ -190,7 +190,7 @@ class _TaskScreenState extends State<TaskScreen> {
             border: Border(
                 bottom: BorderSide(width: 1.0, color: Colors.grey.shade400))),
         child: Padding(
-          padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
+          padding: const EdgeInsets.only(left: 35.0, right: 30.0, top: 25.0),
           child: Column(
             children: [
               RichText(
@@ -198,11 +198,11 @@ class _TaskScreenState extends State<TaskScreen> {
                       text:
                           '[QLVBYKCD&DH] - 45/TB-UBND - Kết luận của Phó Chủ tịch Thường trực UBND tỉnh tại buổi làm việc về Cổng dịch vụ',
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 18,
                           fontWeight: FontWeight.w300,
                           color: Colors.black))),
               const SizedBox(
-                height: 6,
+                height: 10.0,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -210,7 +210,7 @@ class _TaskScreenState extends State<TaskScreen> {
                   const Text(
                     '24/10/2018',
                     style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 18,
                         fontWeight: FontWeight.w400,
                         color: AppColor.skyBlue),
                   ),
@@ -219,18 +219,18 @@ class _TaskScreenState extends State<TaskScreen> {
                       Icon(
                         Icons.chat_bubble_outline,
                         color: AppColor.skyBlue,
-                        size: 15,
+                        size: 25,
                       ),
-                      Text(' 2', style: TextStyle(fontSize: 13)),
+                      Text(' 2', style: TextStyle(fontSize: 18)),
                       SizedBox(
                         width: 25,
                       ),
                       Icon(
                         Icons.attachment_outlined,
                         color: AppColor.skyBlue,
-                        size: 18,
+                        size: 25,
                       ),
-                      Text(' 1', style: TextStyle(fontSize: 13)),
+                      Text(' 1', style: TextStyle(fontSize: 18)),
                     ],
                   )
                 ],
@@ -260,11 +260,11 @@ class _TaskScreenState extends State<TaskScreen> {
           )),
           //position of Overlay
           Positioned(
-            width: 200.0,
+            width: 250.0,
             left: xPosition + x,
             top: yPosition + height + y,
             child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 16),
+                margin: const EdgeInsets.symmetric(horizontal: 16.0),
                 decoration: const BoxDecoration(boxShadow: [
                   // Shadow for dropbox
                   BoxShadow(

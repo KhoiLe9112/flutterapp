@@ -12,7 +12,7 @@ class Tag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 120,
+      width: 180,
       color: _checkTagsColor(tagName),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
@@ -21,13 +21,13 @@ class Tag extends StatelessWidget {
           children: [
             Text(tagName,
                 style: const TextStyle(
-                    fontSize: 13,
+                    fontSize: 18,
                     fontWeight: FontWeight.w500,
                     color: Colors.white)),
             if (late)
               const Text('(Trễ hạn)',
                   style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 18,
                       fontWeight: FontWeight.w500,
                       color: Colors.white))
           ],

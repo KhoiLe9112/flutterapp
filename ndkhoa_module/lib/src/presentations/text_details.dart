@@ -14,14 +14,14 @@ class TextDetailsScreen extends StatelessWidget {
         title: const Text(
           'CÔNG VIỆC',
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black),
+              fontSize: 20, fontWeight: FontWeight.w300, color: Colors.black),
         ),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back,
-                size: 26, color: AppColor.skyBlue)),
+                size: 30, color: AppColor.skyBlue)),
       ),
 
     body: SingleChildScrollView(
@@ -59,7 +59,7 @@ class TextDetailsScreen extends StatelessWidget {
     return Align(
         alignment: Alignment.centerLeft,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
           child: RichText(
             textAlign: TextAlign.left,
             text: TextSpan(
@@ -68,7 +68,7 @@ class TextDetailsScreen extends StatelessWidget {
                   text: 'File đính kèm\n',
                   style: TextStyle(
                     height: 1.8,
-                    fontSize: 14,
+                    fontSize: 18,
                     fontWeight: FontWeight.w500,
                     color: Colors.black
                   ),
@@ -77,7 +77,7 @@ class TextDetailsScreen extends StatelessWidget {
                   text: 'ubnd-2250-qg-ubnd2018-signed! 2018-10-11_11-32-10.636.pdf UBND-2250-QD-UBND-2018! 2018-10-11_11-32-10-642.docx',
                   style: TextStyle(
                     height: 1.8,
-                    fontSize: 14,
+                    fontSize: 18,
                     fontWeight: FontWeight.w400,
                     color: Colors.blue.shade400
                   ),
@@ -91,7 +91,7 @@ class TextDetailsScreen extends StatelessWidget {
 
   Padding _buildBorder() {
     return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
+        padding: const EdgeInsets.symmetric(horizontal: 30.0),
         child: Container(
           decoration: BoxDecoration(border: Border(bottom: BorderSide(width: 1.5, color: Colors.grey.shade400))),
         ),
@@ -102,7 +102,7 @@ class TextDetailsScreen extends StatelessWidget {
     return Align(
         alignment: Alignment.centerLeft,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
           child: RichText(
             textAlign: TextAlign.left,
             text: TextSpan(
@@ -111,7 +111,7 @@ class TextDetailsScreen extends StatelessWidget {
                   text: '$title\n',
                   style: const TextStyle(
                     height: 1.8,
-                    fontSize: 14,
+                    fontSize: 18,
                     fontWeight: FontWeight.w500,
                     color: Colors.black
                   ),
@@ -120,7 +120,7 @@ class TextDetailsScreen extends StatelessWidget {
                   text: content,
                   style: const TextStyle(
                     height: 1.8,
-                    fontSize: 14,
+                    fontSize: 18,
                     fontWeight: FontWeight.w300,
                     color: Colors.black
                   ),

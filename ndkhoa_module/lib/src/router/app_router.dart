@@ -17,6 +17,7 @@ import 'package:ndkhoa_module/src/presentations/statistics/statistics2_screen.da
 import 'package:ndkhoa_module/src/presentations/task.dart';
 import 'package:ndkhoa_module/src/presentations/task_details.dart';
 import 'package:ndkhoa_module/src/presentations/task_forward.dart';
+import 'package:ndkhoa_module/src/presentations/task_handle.dart';
 import 'package:ndkhoa_module/src/presentations/task_project.dart';
 import 'package:ndkhoa_module/src/presentations/tasks/bindings/new_task_bindings.dart';
 import 'package:ndkhoa_module/src/presentations/tasks/new_task_screen.dart';
@@ -42,6 +43,7 @@ class AppRouter {
   static const searchResultScreen = "/search-result";
   static const textDetailsScreen = "/text-details";
   static const textSearchScreen = "/text-Search";
+  static const taskHandleScreen = "/task-Handle";
   static List<GetPage> pages = [
     GetPage(name: homeScreen, page: () => HomeScreen(), bindings: [
       HomeBindings(),
@@ -71,5 +73,6 @@ class AppRouter {
     GetPage(name: searchResultScreen, page: () => const SearchResultScreen()),
     GetPage(name: textDetailsScreen, page: () => const TextDetailsScreen()),
     GetPage(name: textSearchScreen, page: () => const TextSearchScreen()),
+    GetPage(name: taskHandleScreen, page: () => const TaskHandleScreen()),
   ];
 }

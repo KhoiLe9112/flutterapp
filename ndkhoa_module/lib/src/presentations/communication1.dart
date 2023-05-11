@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -32,27 +31,27 @@ class _Communication1ScreenState extends State<Communication1Screen> {
         title: const Text(
           'CÔNG VIỆC',
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black),
+              fontSize: 20, fontWeight: FontWeight.w300, color: Colors.black),
         ),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back,
-                size: 26, color: AppColor.skyBlue)),
+                size: 30, color: AppColor.skyBlue)),
         actions: [
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/icons/add_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/icons/search_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
         ],
@@ -92,7 +91,7 @@ class _Communication1ScreenState extends State<Communication1Screen> {
   Padding _buildCommunication(
       BuildContext context, String avatar, String fullname, GlobalKey key) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
+      padding: const EdgeInsets.only(left: 25.0, right: 25.0, top: 20.0),
       child: Container(
         decoration: BoxDecoration(
             border: Border(
@@ -102,12 +101,12 @@ class _Communication1ScreenState extends State<Communication1Screen> {
             Row(
               children: [
                 CircleAvatar(
-                  radius: 22,
+                  radius: 28,
                   backgroundColor: Colors.white,
                   backgroundImage: AssetImage(avatar),
                 ),
                 const SizedBox(
-                  width: 15,
+                  width: 20,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,7 +114,7 @@ class _Communication1ScreenState extends State<Communication1Screen> {
                     Text(
                       fullname,
                       style: const TextStyle(
-                          fontSize: 16,
+                          fontSize: 18,
                           fontWeight: FontWeight.w500,
                           color: AppColor.darkBlue),
                     ),
@@ -127,12 +126,12 @@ class _Communication1ScreenState extends State<Communication1Screen> {
                         Icon(
                           Icons.chat_bubble_outline,
                           color: AppColor.skyBlue,
-                          size: 15,
+                          size: 20,
                         ),
                         Text(
                           ' 24/10/2018',
                           style: TextStyle(
-                              fontSize: 15,
+                              fontSize: 18,
                               fontWeight: FontWeight.w300,
                               color: AppColor.skyBlue),
                         )
@@ -151,11 +150,11 @@ class _Communication1ScreenState extends State<Communication1Screen> {
                         'Hoàn thiện Cổng dịch vụ công trực tuyến đảm bảo đồng bộ, liên thông, an toàn, an ninh hệ thống; tăng cường phối hợp với Trung tâm Hành chính công tỉnh,',
                     style: TextStyle(
                         height: 1.4,
-                        fontSize: 14,
+                        fontSize: 18,
                         fontWeight: FontWeight.w300,
                         color: Colors.black))),
             const SizedBox(
-              height: 13,
+              height: 25.0,
             ),
             Row(
               children: [
@@ -195,7 +194,7 @@ class _Communication1ScreenState extends State<Communication1Screen> {
                 // ])),
                 const Text('Gửi đến: ',
                     style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 18,
                         fontWeight: FontWeight.w300,
                         color: Colors.black)),
                 GestureDetector(
@@ -203,7 +202,7 @@ class _Communication1ScreenState extends State<Communication1Screen> {
                   onLongPress: () {
                     setState(() {
                       findNotePosition(key);
-                      floatingNote = _createrFloatingNote(0.0, -60.0);
+                      floatingNote = _createrFloatingNote(0.0, -75.0);
                       Overlay.of(context).insert(floatingNote!);
                     });
                   },
@@ -213,14 +212,14 @@ class _Communication1ScreenState extends State<Communication1Screen> {
                   },
                   child: const Text('Chienlv, Thinhlq',
                       style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 18,
                           fontWeight: FontWeight.w300,
                           color: AppColor.skyBlue)),
                 ),
               ],
             ),
             const SizedBox(
-              height: 15,
+              height: 20.0,
             ),
           ],
         ),
@@ -231,28 +230,25 @@ class _Communication1ScreenState extends State<Communication1Screen> {
   OverlayEntry _createrFloatingNote(double x, double y) {
     return OverlayEntry(builder: ((context) {
       return Positioned(
-        width: 100,
-        height: 50,
+        width: 120,
+        height: 70,
         left: xPosition + x,
         top: yPosition + height + y,
         child: Stack(
           children: [
             SvgPicture.asset(
               'assets/backgrounds/ui_menu_light.svg',
-              width: 110.0,
-              height: 50.0,
-              // alignment: Alignment.center
-              // width: MediaQuery.of(context).size.width,
-              // height: MediaQuery.of(context).size.height,
+              width: 135.0,
+              height: 75.0,
             ),
             const Positioned(
-              top: 15,
-              left: 15,
+              top: 18,
+              left: 18,
               child: Text('Chưa xem',
                   style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 18,
                       color: Colors.black,
-                      fontWeight: FontWeight.normal,
+                      // fontWeight: FontWeight.normal,
                       decoration: TextDecoration.none)),
             ),
           ],
@@ -266,16 +262,16 @@ class _Communication1ScreenState extends State<Communication1Screen> {
       // width: MediaQuery.of(context).size.width,
       color: Colors.lightBlue.shade100,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 15),
+              padding: EdgeInsets.symmetric(vertical: 15.0),
               child: Text(
                 'Ý kiến trao đổi',
                 style: TextStyle(
-                    fontSize: 13,
+                    fontSize: 18,
                     fontWeight: FontWeight.w500,
                     color: Colors.black),
               ),
@@ -286,7 +282,7 @@ class _Communication1ScreenState extends State<Communication1Screen> {
               },
               icon: SvgPicture.asset(
                 'assets/icons/chat2_icon.svg',
-                width: 32,
+                width: 38,
               ),
             ),
           ],

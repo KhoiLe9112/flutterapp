@@ -44,27 +44,27 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
         title: const Text(
           'CÔNG VIỆC',
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black),
+              fontSize: 20, fontWeight: FontWeight.w300, color: Colors.black),
         ),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back,
-                size: 26, color: AppColor.skyBlue)),
+                size: 30, color: AppColor.skyBlue)),
         actions: [
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/icons/add_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/icons/search_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
         ],
@@ -77,18 +77,18 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
               width: MediaQuery.of(context).size.width,
               color: Colors.lightBlue.shade100,
               child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
                 child: Text(
                   'Chuyển xử lý',
                   style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 18,
                       fontWeight: FontWeight.w500,
                       color: Colors.black),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
               child: Column(
                 children: [
                   RichText(
@@ -96,9 +96,9 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                           text:
                               '45/TB-UBND - Kết luận của Phó Chủ tịch Thường trực UBND tỉnh tại buổi làm việc về Cổng dịch vụ công trực tuyến vận hành tại Trung tâm Hành chính công tỉnh',
                           style: TextStyle(
-                              fontSize: 14, color: Colors.black, height: 1.3))),
+                              fontSize: 18, color: Colors.black, height: 1.3))),
                   const SizedBox(
-                    height: 10.0,
+                    height: 15.0,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -106,7 +106,7 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                       const Text(
                         '24/10/2018',
                         style: TextStyle(
-                            fontSize: 13,
+                            fontSize: 18,
                             fontWeight: FontWeight.w400,
                             color: AppColor.skyBlue),
                       ),
@@ -115,24 +115,24 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                           Icon(
                             Icons.chat_bubble_outline,
                             color: AppColor.skyBlue,
-                            size: 15,
+                            size: 20,
                           ),
-                          Text(' 2', style: TextStyle(fontSize: 13)),
+                          Text(' 2', style: TextStyle(fontSize: 18)),
                           SizedBox(
                             width: 25,
                           ),
                           Icon(
                             Icons.attachment_outlined,
                             color: AppColor.skyBlue,
-                            size: 18,
+                            size: 24,
                           ),
-                          Text(' 1', style: TextStyle(fontSize: 13)),
+                          Text(' 1', style: TextStyle(fontSize: 18)),
                         ],
                       )
                     ],
                   ),
                   const SizedBox(
-                    height: 10.0,
+                    height: 15.0,
                   ),
                   Wrap(
                     runSpacing: 2.0,
@@ -153,18 +153,17 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 15),
+                        vertical: 10.0, horizontal: 20.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
                             child: AppButton(
-                          // action: ,
                           text: 'Chuyển',
                           backColor: AppColor.skyBlue,
                           textColor: Colors.white,
                           radius: 14,
-                          textSize: 14,
+                          textSize: 18,
                           horizontal: 14,
                           vertical: 14,
                         )),
@@ -173,12 +172,11 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                         ),
                         Expanded(
                             child: AppButton(
-                          // action: ,
                           text: 'Hủy bỏ',
                           backColor: Colors.grey.shade400,
                           textColor: Colors.black,
                           radius: 14,
-                          textSize: 14,
+                          textSize: 18,
                           horizontal: 14,
                           vertical: 14,
                         )),
@@ -198,34 +196,34 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
     return Container(
       color: Colors.grey.shade200,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
+              padding: EdgeInsets.symmetric(vertical: 12.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Thời gian hoàn chỉnh',
                   style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 18,
                       fontWeight: FontWeight.w500,
                       color: Colors.black),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 20.0),
+              padding: const EdgeInsets.only(bottom: 25.0),
               child: Container(
                   color: Colors.white,
-                  height: 35,
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  height: 40,
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         "${_dateTime.day}/${_dateTime.month}/${_dateTime.year}",
-                        style: const TextStyle(fontSize: 14),
+                        style: const TextStyle(fontSize: 18),
                       ),
                       GestureDetector(
                         onTap: () async {
@@ -236,7 +234,7 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                         },
                         child: SvgPicture.asset(
                           'assets/icons/calendar_icon.svg',
-                          width: 16,
+                          width: 20,
                         ),
                       ),
                     ],
@@ -252,40 +250,40 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
     return Container(
       color: Colors.grey.shade200,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 12.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     text,
                     style: const TextStyle(
-                        fontSize: 14,
+                        fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: Colors.black),
                   ),
                   const Icon(
                     Icons.keyboard_arrow_down,
-                    size: 18,
+                    size: 24,
                   )
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 20.0),
+              padding: const EdgeInsets.only(bottom: 25.0),
               child: Container(
                   color: Colors.white,
                   width: MediaQuery.of(context).size.width,
-                  height: 35,
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  height: 40,
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: const Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'Lê Quốc Thịnh',
-                      style: TextStyle(fontSize: 14),
+                      style: TextStyle(fontSize: 18),
                     ),
                   )),
             )
@@ -299,17 +297,17 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
     return Container(
       color: Colors.grey.shade200,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 12.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   title,
                   style: const TextStyle(
-                      fontSize: 14,
+                      fontSize: 18,
                       fontWeight: FontWeight.w500,
                       color: Colors.black),
                 ),
@@ -321,58 +319,58 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                 Container(
                     color: Colors.white,
                     // width: MediaQuery.of(context).size.width,
-                    height: 35,
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    height: 40,
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           name1,
-                          style: const TextStyle(fontSize: 14),
+                          style: const TextStyle(fontSize: 18),
                         ),
                         const Icon(
                           Icons.keyboard_arrow_down,
-                          size: 18,
+                          size: 24,
                         )
                       ],
                     )),
                 Container(
                     color: Colors.white,
                     // width: MediaQuery.of(context).size.width,
-                    height: 35,
+                    height: 40,
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           name2,
-                          style: const TextStyle(fontSize: 14),
+                          style: const TextStyle(fontSize: 18),
                         ),
                         const Icon(
                           Icons.keyboard_arrow_down,
-                          size: 18,
+                          size: 24,
                         )
                       ],
                     )),
                 Container(
                     color: Colors.white,
                     width: MediaQuery.of(context).size.width,
-                    height: 35,
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    height: 40,
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Phòng HCTH',
-                        style: TextStyle(fontSize: 14),
+                        style: TextStyle(fontSize: 18),
                       ),
                     )),
               ],
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 10.0),
+              padding: EdgeInsets.symmetric(vertical: 15.0),
               child: Align(
                   alignment: Alignment.centerRight,
-                  child: Icon(Icons.add, size: 28)),
+                  child: Icon(Icons.add, size: 32)),
             ),
           ],
         ),
@@ -384,17 +382,17 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
     return Container(
       color: Colors.grey.shade200,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
+              padding: EdgeInsets.symmetric(vertical: 12.0),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Text(
                   'Ý kiến xử lý',
                   style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 18,
                       fontWeight: FontWeight.w500,
                       color: Colors.black),
                 ),
@@ -403,14 +401,14 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
             Container(
                 color: Colors.white,
                 width: MediaQuery.of(context).size.width,
-                height: 100,
+                height: 120,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
                 child: const Align(
                   alignment: Alignment.topLeft,
                   child: Text(
                     'Nội dung yêu cầu xử lý',
-                    style: TextStyle(fontSize: 14),
+                    style: TextStyle(fontSize: 18),
                   ),
                 )),
             Row(
@@ -426,7 +424,7 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                     }),
                 const Text(
                   'Yêu cầu có văn bản trả lời',
-                  style: TextStyle(fontSize: 14),
+                  style: TextStyle(fontSize: 18),
                 )
               ],
             )
@@ -440,17 +438,17 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
     return Container(
       color: Colors.grey.shade200,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
+              padding: EdgeInsets.symmetric(vertical: 12.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'File đính kèm',
                   style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 18,
                       fontWeight: FontWeight.w500,
                       color: Colors.black),
                 ),
@@ -462,8 +460,8 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                 Container(
                     color: Colors.white,
                     // width: MediaQuery.of(context).size.width,
-                    height: 35,
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    height: 40,
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -471,26 +469,26 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                           children: const [
                             Icon(
                               Icons.attach_file,
-                              size: 18,
+                              size: 24,
                               color: AppColor.skyBlue,
                             ),
                             Text(
                               ' tenfile_1',
-                              style: TextStyle(fontSize: 14),
+                              style: TextStyle(fontSize: 18),
                             ),
                           ],
                         ),
                         const Icon(
                           Icons.remove,
-                          size: 18,
+                          size: 24,
                         )
                       ],
                     )),
                 Container(
                     color: Colors.white,
                     // width: MediaQuery.of(context).size.width,
-                    height: 35,
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    height: 40,
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -498,28 +496,28 @@ class _TaskForwardScreenState extends State<TaskForwardScreen> {
                           children: const [
                             Icon(
                               Icons.attach_file,
-                              size: 18,
+                              size: 24,
                               color: AppColor.skyBlue,
                             ),
                             Text(
                               ' tenfile_2',
-                              style: TextStyle(fontSize: 14),
+                              style: TextStyle(fontSize: 18),
                             ),
                           ],
                         ),
                         const Icon(
                           Icons.remove,
-                          size: 18,
+                          size: 24,
                         )
                       ],
                     )),
               ],
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 10.0),
+              padding: EdgeInsets.symmetric(vertical: 15.0),
               child: Align(
                   alignment: Alignment.centerRight,
-                  child: Icon(Icons.add, size: 28)),
+                  child: Icon(Icons.add, size: 32)),
             ),
           ],
         ),

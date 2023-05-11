@@ -16,28 +16,28 @@ class CommunicationScreen extends StatelessWidget {
         title: const Text(
           'CÔNG VIỆC',
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black),
+              fontSize: 20, fontWeight: FontWeight.w300, color: Colors.black),
         ),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back,
-                size: 26, color: AppColor.skyBlue)),
+                size: 30, color: AppColor.skyBlue)),
         actions: [
           IconButton(
             onPressed: () {},
             // icon: const Icon(Icons.add, size: 26, color: AppColor.darkBlue),
             icon: SvgPicture.asset(
               'assets/icons/add_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/icons/search_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
         ],
@@ -85,18 +85,18 @@ class CommunicationScreen extends StatelessWidget {
     return Container(
       color: Colors.lightBlue.shade100,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: const [
                 Padding(
-                    padding: EdgeInsets.symmetric(vertical: 15),
+                    padding: EdgeInsets.symmetric(vertical: 20.0),
                     child: Text(
                       'Trao đổi',
                       style: TextStyle(
-                          fontSize: 13,
+                          fontSize: 18,
                           fontWeight: FontWeight.w500,
                           color: Colors.black),
                     )),
@@ -110,21 +110,17 @@ class CommunicationScreen extends StatelessWidget {
                       const Icon(
                         Icons.filter_alt_sharp,
                         color: Colors.black,
-                        size: 24,
+                        size: 30,
                       )
-                  //     SvgPicture.asset(
-                  //   'assets/icons/filter_icon.svg',
-                  //   width: 24,
-                  // ),
                 ),
                 const SizedBox(
-                  width: 5,
+                  width: 10.0,
                 ),
                 GestureDetector(
                   onTap: () {},
                   child: SvgPicture.asset(
                     'assets/icons/sort_icon.svg',
-                    width: 24,
+                    width: 30,
                   ),
                 ),
               ],
@@ -137,7 +133,7 @@ class CommunicationScreen extends StatelessWidget {
 
   Padding _buildCommunication(String title, String avatar, String fullname, [Function()? onTap]) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
+      padding: const EdgeInsets.only(left: 25.0, right: 25.0, top: 20.0),
       child: Container(
         decoration: BoxDecoration(
             border: Border(
@@ -150,19 +146,18 @@ class CommunicationScreen extends StatelessWidget {
                   text: TextSpan(
                 text: title,
                 style: const TextStyle(
-                    fontSize: 15,
+                    fontSize: 18,
                     fontWeight: FontWeight.w500,
                     color: AppColor.skyBlue),
               )),
             ),
-            // Spacer(flex: 10,),
             const SizedBox(
-              height: 10,
+              height: 10.0,
             ),
             Row(
               children: [
                 CircleAvatar(
-                  radius: 22,
+                  radius: 28,
                   backgroundColor: Colors.white,
                   backgroundImage: AssetImage(avatar),
                 ),
@@ -174,24 +169,24 @@ class CommunicationScreen extends StatelessWidget {
                     Text(
                       fullname,
                       style: const TextStyle(
-                          fontSize: 16,
+                          fontSize: 18,
                           fontWeight: FontWeight.w500,
                           color: AppColor.darkBlue),
                     ),
                     const SizedBox(
-                      height: 2,
+                      height: 5,
                     ),
                     Row(
                       children: const [
                         Icon(
                           Icons.chat_bubble_outline,
                           color: AppColor.skyBlue,
-                          size: 15,
+                          size: 20,
                         ),
                         Text(
                           ' 24/10/2018',
                           style: TextStyle(
-                              fontSize: 15,
+                              fontSize: 18,
                               fontWeight: FontWeight.w300,
                               color: AppColor.skyBlue),
                         )
@@ -202,7 +197,7 @@ class CommunicationScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 13,
+              height: 15,
             ),
             RichText(
                 text: const TextSpan(
@@ -210,11 +205,11 @@ class CommunicationScreen extends StatelessWidget {
                         'Hoàn thiện Cổng dịch vụ công trực tuyến đảm bảo đồng bộ, liên thông, an toàn, an ninh hệ thống; tăng cường phối hợp với Trung tâm Hành chính công tỉnh,',
                     style: TextStyle(
                         height: 1.4,
-                        fontSize: 14,
+                        fontSize: 18,
                         fontWeight: FontWeight.w300,
                         color: Colors.black))),
             const SizedBox(
-              height: 13,
+              height: 15,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -224,13 +219,13 @@ class CommunicationScreen extends StatelessWidget {
                   TextSpan(
                       text: 'Gửi đến: ',
                       style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 18,
                           fontWeight: FontWeight.w300,
                           color: Colors.black)),
                   TextSpan(
                       text: 'Chienlv, Thinhlq',
                       style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 18,
                           fontWeight: FontWeight.w300,
                           color: AppColor.skyBlue))
                 ])),
@@ -238,13 +233,13 @@ class CommunicationScreen extends StatelessWidget {
                   onTap: onTap,
                   child: SvgPicture.asset(
                     'assets/icons/chat_icon.svg',
-                    width: 28,
+                    width: 32,
                   ),
                 ),
               ],
             ),
             const SizedBox(
-              height: 5,
+              height: 10,
             ),
           ],
         ),

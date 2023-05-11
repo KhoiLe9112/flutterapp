@@ -21,27 +21,27 @@ class _ChildTaskState extends State<ChildTask> {
         title: const Text(
           'CÔNG VIỆC',
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black),
+              fontSize: 20, fontWeight: FontWeight.w300, color: Colors.black),
         ),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back,
-                size: 26, color: AppColor.skyBlue)),
+                size: 30, color: AppColor.skyBlue)),
         actions: [
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/icons/add_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/icons/search_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
         ],
@@ -61,7 +61,7 @@ class _ChildTaskState extends State<ChildTask> {
               children: [
                 _buildToolBar(),
                 const SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 _buildContent(
                   'assets/avatars/avatar2.png',
@@ -97,7 +97,7 @@ class _ChildTaskState extends State<ChildTask> {
     String content,
   ) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -107,13 +107,13 @@ class _ChildTaskState extends State<ChildTask> {
         child: Padding(
           padding: const EdgeInsets.all(15),
           child: Wrap(
-            runSpacing: 10,
+            runSpacing: 15.0,
             children: [
               Row(
                 children: [
                   ///avatar
                   CircleAvatar(
-                    radius: 22,
+                    radius: 28,
                     backgroundColor: Colors.white,
                     backgroundImage: AssetImage(avatar),
                   ),
@@ -129,8 +129,8 @@ class _ChildTaskState extends State<ChildTask> {
                   text: TextSpan(
                       text: content,
                       style: const TextStyle(
-                          height: 1.2,
-                          fontSize: 14,
+                          height: 1.4,
+                          fontSize: 18,
                           fontWeight: FontWeight.w300,
                           color: Colors.black))),
 
@@ -141,7 +141,7 @@ class _ChildTaskState extends State<ChildTask> {
                   const Text(
                     '24/10/2018',
                     style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 18,
                         fontWeight: FontWeight.w400,
                         color: AppColor.skyBlue),
                   ),
@@ -150,18 +150,18 @@ class _ChildTaskState extends State<ChildTask> {
                       Icon(
                         Icons.chat_bubble_outline,
                         color: AppColor.skyBlue,
-                        size: 15,
+                        size: 20,
                       ),
-                      Text(' 2', style: TextStyle(fontSize: 13)),
+                      Text(' 2', style: TextStyle(fontSize: 18)),
                       SizedBox(
                         width: 25,
                       ),
                       Icon(
                         Icons.attachment_outlined,
                         color: AppColor.skyBlue,
-                        size: 18,
+                        size: 24,
                       ),
-                      Text(' 1', style: TextStyle(fontSize: 13)),
+                      Text(' 1', style: TextStyle(fontSize: 18)),
                     ],
                   )
                 ],
@@ -178,11 +178,11 @@ class _ChildTaskState extends State<ChildTask> {
       width: MediaQuery.of(context).size.width,
       color: Colors.lightBlue.shade100,
       child: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
         child: Text(
           'Công việc con',
           style: TextStyle(
-              fontSize: 13, fontWeight: FontWeight.w500, color: Colors.black),
+              fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
         ),
       ),
     );

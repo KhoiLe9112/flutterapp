@@ -56,7 +56,7 @@ class MembersDropDown extends StatelessWidget {
               height: 320.0,
               child: ListView.builder(
                   padding: const EdgeInsets.symmetric(
-                      vertical: 8.0, horizontal: 10.0),
+                      vertical: 12.0, horizontal: 15.0),
                   itemCount: membersAvatarData.length,
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
@@ -64,7 +64,7 @@ class MembersDropDown extends StatelessWidget {
                       child: Row(
                         children: [
                           CircleAvatar(
-                            radius: 18,
+                            radius: 24,
                             backgroundColor: Colors.white,
                             backgroundImage: AssetImage(
                                 'assets/avatars/${membersAvatarData[index]}'),
@@ -73,7 +73,7 @@ class MembersDropDown extends StatelessWidget {
                           Text(
                             membersNameData[index],
                             style: const TextStyle(
-                                color: Colors.black, fontSize: 14),
+                                color: Colors.black, fontSize: 16),
                           ),
                         ],
                       ),

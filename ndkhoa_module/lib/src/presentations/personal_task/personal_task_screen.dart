@@ -41,27 +41,27 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
         title: const Text(
           'CÔNG VIỆC',
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black),
+              fontSize: 20, fontWeight: FontWeight.w300, color: Colors.black),
         ),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back,
-                size: 26, color: AppColor.skyBlue)),
+                size: 30, color: AppColor.skyBlue)),
         actions: [
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/icons/add_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/icons/search_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
         ],
@@ -90,7 +90,7 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
                   Get.toNamed(AppRouter.taskScreen);
                 }),
                 const SizedBox(
-                  height: 20,
+                  height: 15,
                 ),
               ],
             ),
@@ -113,16 +113,16 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
     return Container(
       color: Colors.lightBlue.shade100,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Row(
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15),
+                padding: const EdgeInsets.symmetric(vertical: 15.0),
                 child: Text(
                   dropdownValue,
                   style: const TextStyle(
-                      fontSize: 13,
+                      fontSize: 18,
                       fontWeight: FontWeight.w500,
                       color: Colors.black),
                 )),
@@ -138,23 +138,23 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
                 child: const Icon(
                   Icons.keyboard_arrow_down,
                   color: AppColor.skyBlue,
-                  size: 26,
+                  size: 30,
                 )),
             Padding(
-                padding: const EdgeInsets.only(left: 25, top: 20, bottom: 20),
+                padding: const EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
                 child: RichText(
                     text: TextSpan(children: [
                   const TextSpan(
                     text: 'Tổng số ',
                     style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 18,
                         fontWeight: FontWeight.w400,
                         color: Colors.black),
                   ),
                   TextSpan(
                     text: total.toString(),
                     style: const TextStyle(
-                        fontSize: 13,
+                        fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: Colors.black),
                   ),
@@ -167,17 +167,17 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
 
   Padding _buildBox(String text, int data, int color, [Function()? onTap]) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+      padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(12.0),
           decoration: BoxDecoration(
             border: Border.all(
               color: Colors.grey,
               width: 1.5,
             ),
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            borderRadius: const BorderRadius.all(Radius.circular(10.0)),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -185,17 +185,17 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
               Text(
                 text,
                 style:
-                    const TextStyle(fontSize: 13, fontWeight: FontWeight.w400),
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
               ),
               Row(
                 children: [
                   const Icon(
                     Icons.alarm,
-                    size: 24,
+                    size: 28,
                     color: Color(0xFF707070),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(left: 18),
+                    margin: const EdgeInsets.only(left: 18.0),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle, color: Color(color)),
                     child: Padding(
@@ -203,7 +203,7 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
                       child: Text(
                         data.toString(),
                         style:
-                            const TextStyle(fontSize: 13, color: Colors.white),
+                            const TextStyle(fontSize: 18, color: Colors.white),
                       ),
                     ),
                   )
@@ -234,11 +234,11 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
           )),
           //position of Overlay
           Positioned(
-            width: 200.0,
+            width: 250.0,
             left: xPosition + x,
             top: yPosition + height + y,
             child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 16),
+              margin: const EdgeInsets.symmetric(horizontal: 16.0),
               decoration: const BoxDecoration(boxShadow: [
                 // Shadow for dropbox
                 BoxShadow(
@@ -273,16 +273,6 @@ class _PersonalTaskScreenState extends State<PersonalTaskScreen> {
 
   ///Hàm tìm vị trí dropdown
   void findDropdownPosition() {
-    ///lấy chiều cao, chiều rộng của dropdown
-    // RenderBox? renderBox =
-    //     actionKey?.currentContext?.findRenderObject() as RenderBox?;
-    // height = renderBox?.size.height ?? 0;
-    // width = renderBox?.size.width ?? 0;
-    // ///lấy vị trí hiện tại
-    // Offset? offset = renderBox?.localToGlobal(Offset.zero);
-    // xPosition = offset?.dx ?? 0;
-    // yPosition = offset?.dy ?? 0;
-
     RenderBox renderBox =
         actionKey.currentContext!.findRenderObject() as RenderBox;
     height = renderBox.size.height;

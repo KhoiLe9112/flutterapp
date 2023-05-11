@@ -25,30 +25,29 @@ class DropDownItem extends StatelessWidget {
       onTap: () {
         //return value
         callBack(text);
-        
       },
       child: Container(
         color: isSelected ? AppColor.greyColor : Colors.white,
-        padding: const EdgeInsets.symmetric(vertical: 6.0),
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: isSelected
             ? Align(
                 alignment: Alignment.centerLeft,
                 child: Row(
                   children: [
                     SizedBox(
-                      width: 20,
+                      width: 25.0,
                       child: Visibility(
                         visible: checkIcon,
                         child: const Icon(
                           Icons.check,
                           color: AppColor.skyBlue,
-                          size: 18,
+                          size: 24,
                         ),
                       ),
                     ),
                     Text(
                       text,
-                      style: const TextStyle(color: Colors.black, fontSize: 14),
+                      style: const TextStyle(color: Colors.black, fontSize: 18),
                     ),
                   ],
                 ),
@@ -56,10 +55,10 @@ class DropDownItem extends StatelessWidget {
             : Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
+                  padding: const EdgeInsets.only(left: 25.0),
                   child: Text(
                     text,
-                    style: const TextStyle(color: Colors.black, fontSize: 14),
+                    style: const TextStyle(color: Colors.black, fontSize: 18),
                   ),
                 ),
               ),

@@ -46,7 +46,7 @@ class NewDropDown extends StatelessWidget {
               ],
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 12.0),
               child: Column(
                 children: <Widget>[
                   GestureDetector(
@@ -55,14 +55,14 @@ class NewDropDown extends StatelessWidget {
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 4.0, horizontal: 20.0),
+                          vertical: 8.0, horizontal: 25.0),
                       child: Row(
                         children: [
                           const Text(
                             AppText.taoMoi,
                             style: TextStyle(
                                 color: AppColor.darkBlue,
-                                fontSize: 14.0,
+                                fontSize: 18.0,
                                 fontWeight: FontWeight.bold),
                           ),
                           const Spacer(),

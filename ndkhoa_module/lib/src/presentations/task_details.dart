@@ -31,27 +31,27 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
         title: const Text(
           'CÔNG VIỆC',
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black),
+              fontSize: 20, fontWeight: FontWeight.w300, color: Colors.black),
         ),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back,
-                size: 26, color: AppColor.skyBlue)),
+                size: 30, color: AppColor.skyBlue)),
         actions: [
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/icons/add_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/icons/search_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
         ],
@@ -88,14 +88,14 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
 
   Padding _buildLink() {
     return Padding(
-                padding: const EdgeInsets.only(top: 10, left: 20, bottom: 30),
+                padding: const EdgeInsets.only(top: 15.0, left: 25.0, bottom: 30.0),
                 child: Column(
                   children: [
                     const Align(
                       alignment: Alignment.centerLeft,
                       child: Text('Hồ sơ / Dự án',
                           style: TextStyle(
-                              fontSize: 13,
+                              fontSize: 18,
                               fontWeight: FontWeight.w500,
                               color: Colors.black)),
                     ),
@@ -108,7 +108,7 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                         alignment: Alignment.centerLeft,
                         child: Text('Cổng Dịch vụ công tỉnh Thừa Thiên Huế',
                             style: TextStyle(
-                                fontSize: 13, color: AppColor.skyBlue)),
+                                fontSize: 18, color: AppColor.skyBlue)),
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -121,7 +121,7 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                         child: Text(
                             'Nâng cấp, tích hợp phần mềm QLVB&ĐH, Ý kiến chỉ đạo',
                             style: TextStyle(
-                                fontSize: 13, color: AppColor.skyBlue)),
+                                fontSize: 18, color: AppColor.skyBlue)),
                       ),
                     ),
                   ],
@@ -132,7 +132,7 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
   Padding _buildDescribe() {
     return Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: RichText(
@@ -141,7 +141,7 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                         TextSpan(
                           text: 'Ý kiến xử lý\n\n',
                           style: TextStyle(
-                              fontSize: 13,
+                              fontSize: 18,
                               fontWeight: FontWeight.w500,
                               color: Colors.black),
                         ),
@@ -149,8 +149,8 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                             text:
                                 'Trung tâm Công nghệ thông tin tỉnh - đơn vị tư vấn xây dựng Cổng dịch vụ công cần tập trung:\n - Hoàn thiện Cổng dịch vụ công trực tuyến đảm bảo đồng bộ, liên thông, an toàn, an ninh hệ thống; tăng cường phối hợp với Trung tâm Hành chính công tỉnh, tổng hợp các góp ý của công dân, tổ chức để hoàn thiện phiên bản Cổng dịch vụ công trực tuyến 1.0 trong quý I.',
                             style: TextStyle(
-                                height: 1.2,
-                                fontSize: 14,
+                                height: 1.4,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w300,
                                 color: Colors.black)),
                       ],
@@ -165,7 +165,7 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                 scrollDirection: Axis.horizontal,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 20, vertical: 10),
+                      horizontal: 25.0, vertical: 15.0),
                   child: Row(
                     children: [
                       _buildRole('Người giao', 'assets/avatars/avatar3.png'),
@@ -176,12 +176,12 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                       _buildRole(
                           'Người phối hợp', 'assets/avatars/avatar2.png'),
                       Padding(
-                        padding: const EdgeInsets.only(top: 20),
+                        padding: const EdgeInsets.only(top: 25.0),
                         child: Column(
                           children: [
                             const Text('(3)',
                                 style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.w300,
                                     color: Colors.black)),
                             GestureDetector(
@@ -199,19 +199,19 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
   Padding _buildContent() {
     return Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    const EdgeInsets.symmetric(vertical: 15.0, horizontal: 25.0),
                 child: Column(
                   children: [
                     _buildButtonBar(),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      padding: const EdgeInsets.symmetric(vertical: 15.0),
                       child: RichText(
                           text: const TextSpan(
                               text:
                                   '45/TB-UBND - Kết luận của Phó Chủ tịch Thường trực UBND tỉnh tại buổi làm việc về Cổng dịch vụ công trực tuyến vận hành tại Trung tâm Hành chính công tỉnh',
                               style: TextStyle(
                                   height: 1.2,
-                                  fontSize: 14,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w300,
                                   color: Colors.black))),
                     ),
@@ -221,7 +221,7 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                         const Text(
                           '24/10/2018',
                           style: TextStyle(
-                              fontSize: 13,
+                              fontSize: 18,
                               fontWeight: FontWeight.w400,
                               color: AppColor.skyBlue),
                         ),
@@ -230,18 +230,18 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                             Icon(
                               Icons.chat_bubble_outline,
                               color: AppColor.skyBlue,
-                              size: 15,
+                              size: 20,
                             ),
-                            Text(' 2', style: TextStyle(fontSize: 13)),
+                            Text(' 2', style: TextStyle(fontSize: 18)),
                             SizedBox(
                               width: 25,
                             ),
                             Icon(
                               Icons.attachment_outlined,
                               color: AppColor.skyBlue,
-                              size: 18,
+                              size: 25,
                             ),
-                            Text(' 1', style: TextStyle(fontSize: 13)),
+                            Text(' 1', style: TextStyle(fontSize: 18)),
                           ],
                         )
                       ],
@@ -259,26 +259,26 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
             Expanded(
                 child: AppButton(
                     navigate: () {
-                      Get.toNamed(AppRouter.newTaskScreen);
+                      Get.toNamed(AppRouter.taskForwardScreen);
                     },
                     text: 'Chuyển tiếp',
                     backColor: AppColor.lightBlue,
                     textColor: Colors.white,
                     radius: 16,
-                    textSize: 10,
+                    textSize: 16,
                     horizontal: 10,
                     vertical: 5)),
             const SizedBox(width: 10),
             Expanded(
                 child: AppButton(
                     navigate: () {
-
+                      Get.toNamed(AppRouter.taskHandleScreen);
                     },
                     text: 'Xử lý',
                     backColor: AppColor.skyBlue,
                     textColor: Colors.white,
                     radius: 16,
-                    textSize: 10,
+                    textSize: 16,
                     horizontal: 10,
                     vertical: 5)),
             const SizedBox(width: 10),
@@ -291,7 +291,7 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                     backColor: AppColor.lightBlue,
                     textColor: Colors.white,
                     radius: 16,
-                    textSize: 10,
+                    textSize: 16,
                     horizontal: 10,
                     vertical: 5)),
           ],
@@ -304,13 +304,13 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
         Text(
           role,
           style: const TextStyle(
-              fontSize: 13, fontWeight: FontWeight.w500, color: Colors.black),
+              fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
         ),
         const SizedBox(
           height: 10,
         ),
         CircleAvatar(
-          radius: 22,
+          radius: 28,
           backgroundColor: Colors.white,
           backgroundImage: AssetImage(avatar),
         ),
@@ -338,7 +338,7 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                 child: Text(
                   'Chi tiết công việc',
                   style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 18,
                       fontWeight: FontWeight.w500,
                       color: Colors.black),
                 )),
@@ -348,7 +348,7 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                   setState(() {
                     findDropdownPosition(infoKey);
                     floatingDropdown =
-                        _createFloatingDropdown(-165.0, -6.0);
+                        _createFloatingDropdown(-210.0, -6.0);
                     Overlay.of(context).insert(floatingDropdown!);
                   });
                 },
@@ -381,7 +381,7 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
           )),
           //position of Overlay
           Positioned(
-            width: 200.0,
+            width: 250.0,
             left: xPosition + x,
             top: yPosition + height + y,
             child: Container(

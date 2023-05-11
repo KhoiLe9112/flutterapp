@@ -30,14 +30,14 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
         title: const Text(
           'CÔNG VIỆC',
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black),
+              fontSize: 20, fontWeight: FontWeight.w300, color: Colors.black),
         ),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back,
-                size: 26, color: AppColor.skyBlue)),
+                size: 30, color: AppColor.skyBlue)),
         actions: [
           IconButton(
             key: newKey,
@@ -45,20 +45,20 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
               setState(() {
                 findDropdownPosition(newKey);
                 floatingDropdown =
-                    _createFloatingDropdown(-150.0, -20.0, true, 200.0);
+                    _createFloatingDropdown(-150.0, -20.0, true, 230.0);
                 Overlay.of(context).insert(floatingDropdown!);
               });
             },
             icon: SvgPicture.asset(
               'assets/icons/add_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
           IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
               'assets/icons/search_icon.svg',
-              width: 16,
+              width: 20,
             ),
           ),
         ],
@@ -70,13 +70,13 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
           _buildDescribe(),
           _buildInfo(),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Row(
               children: [
                 const Text(
                   'Danh sách công việc',
                   style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 18,
                       fontWeight: FontWeight.w500,
                       color: Colors.black),
                 ),
@@ -93,9 +93,9 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Wrap(
-              runSpacing: 5,
+              runSpacing: 8,
               children: [
                 _buildContent('assets/avatars/lpb_avatar.png',
                     Tag(late: false, tagName: 'Hoàn thành')),
@@ -111,7 +111,8 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
                     Tag(late: true, tagName: 'Đang thực hiện')),
               ],
             ),
-          )
+          ),
+          const SizedBox(height: 20.0)
         ],
       )),
     );
@@ -128,45 +129,48 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
         borderRadius: BorderRadius.circular(15),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15.0),
         child: Wrap(
           runSpacing: 10,
           children: [
-            Row(
-              children: [
-                ///avatar
-                CircleAvatar(
-                  radius: 22,
-                  backgroundColor: Colors.white,
-                  backgroundImage: AssetImage(avatar),
-                ),
-                const Spacer(),
-
-                ///Icons
-                const Icon(
-                  Icons.chat_bubble_outline,
-                  color: AppColor.skyBlue,
-                  size: 15,
-                ),
-                const Text(' 2', style: TextStyle(fontSize: 13)),
-                const SizedBox(
-                  width: 15,
-                ),
-                const Icon(
-                  Icons.attachment_outlined,
-                  color: AppColor.skyBlue,
-                  size: 18,
-                ),
-                const Text(' 1', style: TextStyle(fontSize: 13)),
-                const SizedBox(
-                  width: 15,
-                ),
-                SvgPicture.asset(
-                  'assets/icons/eye_icon.svg',
-                  width: 16,
-                ),
-                const Text(' 2', style: TextStyle(fontSize: 13)),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                children: [
+                  ///avatar
+                  CircleAvatar(
+                    radius: 28,
+                    backgroundColor: Colors.white,
+                    backgroundImage: AssetImage(avatar),
+                  ),
+                  const Spacer(),
+            
+                  ///Icons
+                  const Icon(
+                    Icons.chat_bubble_outline,
+                    color: AppColor.skyBlue,
+                    size: 20,
+                  ),
+                  const Text(' 2', style: TextStyle(fontSize: 18)),
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  const Icon(
+                    Icons.attachment_outlined,
+                    color: AppColor.skyBlue,
+                    size: 24,
+                  ),
+                  const Text(' 1', style: TextStyle(fontSize: 18)),
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  SvgPicture.asset(
+                    'assets/icons/eye_icon.svg',
+                    width: 20,
+                  ),
+                  const Text(' 2', style: TextStyle(fontSize: 18)),
+                ],
+              ),
             ),
 
             ///content
@@ -175,8 +179,8 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
                     text:
                         'Báo cáo, họp rà soát liên quan hoạt động nâng cấp phần mềm HSCV',
                     style: TextStyle(
-                        height: 1.2,
-                        fontSize: 14,
+                        height: 1.4,
+                        fontSize: 18,
                         fontWeight: FontWeight.w300,
                         color: Colors.black))),
 
@@ -196,7 +200,7 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
                 Text(
                   'Từ: 24/10/2018 đến: 24/10/2018',
                   style: TextStyle(
-                      fontSize: 10,
+                      fontSize: 14,
                       fontWeight: FontWeight.w300,
                       color: Colors.grey.shade600),
                 ),
@@ -215,7 +219,7 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
               bottom: BorderSide(width: 1.0, color: Colors.grey.shade400),
               top: BorderSide(width: 1.0, color: Colors.grey.shade400))),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 29.0, horizontal: 25.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -224,13 +228,13 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
                 Text(
                   'Người chủ trì',
                   style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 18,
                       fontWeight: FontWeight.w500,
                       color: Colors.black),
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: 10.0),
                 CircleAvatar(
-                  radius: 22,
+                  radius: 28,
                   backgroundColor: Colors.white,
                   backgroundImage: AssetImage('assets/avatars/avatar2.png'),
                 ),
@@ -244,16 +248,16 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
                     Text(
                       'Thành viên: ',
                       style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 18,
                           fontWeight: FontWeight.w300,
                           color: Colors.black),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 4),
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
                       child: Text(
                         'Ngày bắt đầu: ',
                         style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 18,
                             fontWeight: FontWeight.w300,
                             color: Colors.black),
                       ),
@@ -261,7 +265,7 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
                     Text(
                       'Ngày kết thúc: ',
                       style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 18,
                           fontWeight: FontWeight.w300,
                           color: Colors.black),
                     )
@@ -276,24 +280,24 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
                         setState(() {
                           findDropdownPosition(membersKey);
                           floatingDropdown = _createFloatingDropdown(
-                              -180.0, 0.0, false, 260.0);
+                              -180.0, 0.0, false, 305.0);
                           Overlay.of(context).insert(floatingDropdown!);
                         });
                       },
                       child: const Text(
                         ' 7',
                         style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 18,
                             fontWeight: FontWeight.w300,
                             color: AppColor.skyBlue),
                       ),
                     ),
                     const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 4),
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
                       child: Text(
                         ' 24/10/2017',
                         style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 18,
                             fontWeight: FontWeight.w300,
                             color: AppColor.skyBlue),
                       ),
@@ -301,7 +305,7 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
                     const Text(
                       ' 24/10/2018',
                       style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 18,
                           fontWeight: FontWeight.w300,
                           color: AppColor.skyBlue),
                     )
@@ -317,11 +321,11 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
 
   Padding _buildDescribe() {
     return const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        padding: EdgeInsets.only(left: 25.0, top: 20.0, bottom: 15.0),
         child: Text(
           'Nâng cấp, tích hợp phần mềm QLVB&ĐH, Ý kiến chỉ đạo',
           style: TextStyle(
-              fontSize: 13,
+              fontSize: 18,
               // fontWeight: FontWeight.w500,
               color: Colors.black),
         ));
@@ -332,11 +336,11 @@ class TaskProjectScreenState extends State<TaskProjectScreen> {
       width: MediaQuery.of(context).size.width,
       color: Colors.lightBlue.shade100,
       child: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
         child: Text(
           'Hồ sơ / Dự án',
           style: TextStyle(
-              fontSize: 13, fontWeight: FontWeight.w500, color: Colors.black),
+              fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
         ),
       ),
     );

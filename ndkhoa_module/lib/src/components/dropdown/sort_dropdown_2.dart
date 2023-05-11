@@ -57,37 +57,6 @@ class _SortDropDown2State extends State<SortDropDown2> {
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Column(
                 children: <Widget>[
-                  Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(
-                                width: 1.0, color: Colors.grey.shade500))),
-                    child: GestureDetector(
-                      onTap: () {
-                        widget.triggerRemove();
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                            top: 4.0, bottom: 4.0, left: 20.0),
-                        child: Row(
-                          children: [
-                            const Text(
-                              AppText.sapXep,
-                              style: TextStyle(
-                                  color: AppColor.darkBlue,
-                                  fontSize: 14.0,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            const Spacer(),
-                            Icon(
-                              Icons.arrow_drop_up,
-                              color: Colors.grey.shade700,
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
                   DropDownItem(
                       checkIcon: widget.checkIcon,
                       text: widget.dropCountryData2[0],

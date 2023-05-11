@@ -34,7 +34,7 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
         value: item,
         child: Text(
           item,
-          style: const TextStyle(fontSize: 14, color: Colors.black),
+          style: const TextStyle(fontSize: 18, color: Colors.black),
         ),
       );
 
@@ -47,23 +47,23 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
         title: const Text(
           'TÌM KIẾM VĂN BẢN',
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w300, color: Colors.black),
+              fontSize: 20, fontWeight: FontWeight.w300, color: Colors.black),
         ),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back,
-                size: 26, color: AppColor.skyBlue)),
+                size: 30, color: AppColor.skyBlue)),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(25.0),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
               Wrap(
-                runSpacing: 2.0,
+                runSpacing: 5.0,
                 children: [
                   ///Nhap van ban
                   _buildInputTextField(),
@@ -72,7 +72,7 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
                   Container(
                     color: Colors.grey.shade200,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
                       child: Row(
                         children: [
                           _buildDatePickerFrom(context),
@@ -90,7 +90,7 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
                 ],
               ),
               const SizedBox(
-                height: 15,
+                height: 20,
               ),
               _buildSearchButton(context)
             ],
@@ -104,29 +104,29 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
     return Container(
       color: Colors.grey.shade200,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
+              padding: EdgeInsets.symmetric(vertical: 12.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Trích yếu',
-                  style: TextStyle(fontSize: 14, color: Colors.black),
+                  style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 15.0),
+              padding: const EdgeInsets.only(bottom: 20.0),
               child: Container(
                 color: Colors.white,
                 width: MediaQuery.of(context).size.width,
-                height: 35,
-                padding: const EdgeInsets.symmetric(horizontal: 15),
+                height: 40,
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: const TextField(
                   textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 14, color: Colors.black),
+                  style: TextStyle(fontSize: 18, color: Colors.black),
                   decoration: InputDecoration(
                     border: InputBorder.none,
                   ),
@@ -142,31 +142,31 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
   Expanded _buildDatePickerTo(BuildContext context) {
     return Expanded(
         child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
       child: Column(
         children: [
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0),
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 'Đến ngày',
-                style: TextStyle(fontSize: 14, color: Colors.black),
+                style: TextStyle(fontSize: 18, color: Colors.black),
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 15.0),
+            padding: const EdgeInsets.only(bottom: 20.0),
             child: Container(
                 color: Colors.white,
-                height: 35,
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                height: 40,
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       "${_dateTimeTo.day}/${_dateTimeTo.month}/${_dateTimeTo.year}",
-                      style: const TextStyle(fontSize: 14),
+                      style: const TextStyle(fontSize: 18),
                     ),
                     GestureDetector(
                         onTap: () async {
@@ -177,7 +177,7 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
                         },
                         child: const Icon(
                           Icons.calendar_month_outlined,
-                          size: 18,
+                          size: 25,
                         )),
                   ],
                 )),
@@ -190,31 +190,31 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
   Expanded _buildDatePickerFrom(BuildContext context) {
     return Expanded(
         child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
       child: Column(
         children: [
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0),
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 'Từ ngày',
-                style: TextStyle(fontSize: 14, color: Colors.black),
+                style: TextStyle(fontSize: 18, color: Colors.black),
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 20.0),
+            padding: const EdgeInsets.only(bottom: 25.0),
             child: Container(
                 color: Colors.white,
-                height: 35,
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                height: 40,
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       "${_dateTimeFrom.day}/${_dateTimeFrom.month}/${_dateTimeFrom.year}",
-                      style: const TextStyle(fontSize: 14),
+                      style: const TextStyle(fontSize: 18),
                     ),
                     GestureDetector(
                         onTap: () async {
@@ -225,7 +225,7 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
                         },
                         child: const Icon(
                           Icons.calendar_month_outlined,
-                          size: 18,
+                          size: 25,
                         )),
                   ],
                 )),
@@ -239,16 +239,16 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
     return Container(
       color: Colors.grey.shade200,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         child: DropdownButton<String>(
           isExpanded: true,
           value: itemValue,
-          iconSize: 22,
+          iconSize: 24,
           icon: const Icon(Icons.keyboard_arrow_down),
           items: items.map(buildMenuItem).toList(),
           hint: Text(
             text,
-            style: const TextStyle(fontSize: 14, color: Colors.black),
+            style: const TextStyle(fontSize: 18, color: Colors.black),
           ),
           onChanged: (value) => setState(() {
             itemValue = value;
@@ -260,14 +260,14 @@ class _TextSearchScreenState extends State<TextSearchScreen> {
 
   Padding _buildSearchButton(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
       child: AppButton(
         navigate: _triggerNavigate,
         text: 'Tìm kiếm',
         backColor: AppColor.skyBlue,
         textColor: Colors.white,
         radius: 24,
-        textSize: 14,
+        textSize: 18,
         horizontal: 16,
         vertical: 16,
       ),
